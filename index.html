@@ -10,7 +10,6 @@
       --blue-primary: #11a9e6;
       --blue-accent: #0da4e8;
       --blue-dark: #00456d;
-      --teal-accent: #0ab38c;
       --gradient-blue-start: #0fa7e2;
       --gradient-green-end: #0ab38c;
       --gradient-brand-horizontal: linear-gradient(90deg, var(--gradient-blue-start), var(--gradient-green-end));
@@ -28,7 +27,11 @@
       --nav-collapsed: 20px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Lato', sans-serif;
@@ -41,7 +44,8 @@
     /* ===== NAVIGATION ===== */
     .chapter-nav {
       position: fixed;
-      left: 0; top: 0;
+      left: 0;
+      top: 0;
       width: var(--nav-width);
       height: 100vh;
       background: var(--bg-light);
@@ -61,47 +65,85 @@
 
     .nav-toggle {
       position: absolute;
-      right: 6px; top: 50%;
+      right: 6px;
+      top: 50%;
       transform: translateY(-50%);
-      width: 14px; height: 20px;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      gap: 3px; cursor: pointer;
-      opacity: 0.3; transition: opacity 0.2s;
+      width: 14px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: opacity 0.2s;
     }
 
-    .chapter-nav:hover .nav-toggle { opacity: 0; }
+    .chapter-nav:hover .nav-toggle {
+      opacity: 0;
+    }
 
     .nav-toggle span {
-      display: block; width: 12px; height: 1.5px;
-      background: var(--text-gray); border-radius: 1px;
+      display: block;
+      width: 12px;
+      height: 1.5px;
+      background: var(--text-gray);
+      border-radius: 1px;
     }
 
-    .nav-header { margin-bottom: 40px; padding-right: 30px; }
-    .nav-logo { height: 32px; margin-bottom: 8px; }
-    .nav-logo img { height: 100%; width: auto; }
+    .nav-header {
+      margin-bottom: 40px;
+      padding-right: 30px;
+    }
+
+    .nav-logo {
+      height: 32px;
+      margin-bottom: 8px;
+    }
+
+    .nav-logo img {
+      height: 100%;
+      width: auto;
+    }
 
     .nav-subtitle {
-      font-size: 11px; color: var(--text-light);
-      text-transform: uppercase; letter-spacing: 1px;
-      text-decoration: none; display: block;
+      font-size: 11px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: block;
     }
-    .nav-subtitle:hover { color: var(--blue-accent); }
 
-    .nav-section { margin-bottom: 28px; }
+    .nav-subtitle:hover {
+      color: var(--blue-accent);
+    }
+
+    .nav-section {
+      margin-bottom: 28px;
+    }
 
     .nav-section-title {
-      font-size: 10px; font-weight: 600; color: var(--text-light);
-      text-transform: uppercase; letter-spacing: 1.5px;
-      margin-bottom: 14px; padding-left: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      padding-left: 4px;
     }
 
     .nav-item {
-      display: flex; align-items: center;
-      padding: 10px 14px; margin-bottom: 6px;
-      border-radius: 8px; cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      cursor: pointer;
       transition: all 0.2s ease;
-      font-size: 13px; color: var(--text-gray);
+      font-size: 13px;
+      color: var(--text-gray);
     }
 
     .nav-item:hover {
@@ -115,29 +157,46 @@
     }
 
     .nav-item-number {
-      width: 22px; height: 22px; border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
       background: var(--bg-subtle);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 600;
-      margin-right: 12px; flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+      margin-right: 12px;
+      flex-shrink: 0;
     }
 
     .nav-item.active .nav-item-number {
-      background: rgba(255,255,255,0.2); color: white;
+      background: rgba(255,255,255,0.2);
+      color: white;
     }
 
     /* ===== SLIDE COUNTER ===== */
     .slide-counter {
-      position: fixed; top: 30px; right: 40px;
-      font-size: 14px; font-weight: 500;
-      color: var(--text-gray); z-index: 100;
+      position: fixed;
+      top: 30px;
+      right: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-gray);
+      z-index: 100;
     }
-    .slide-counter .current { color: var(--blue-accent); font-weight: 600; }
+
+    .slide-counter .current {
+      color: var(--blue-accent);
+      font-weight: 600;
+    }
 
     /* ===== PRESENTATION CONTAINER ===== */
     .presentation {
-      width: 100vw; height: 100vh;
-      overflow: hidden; position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
       transition: padding-left 0.3s ease;
       padding-left: var(--nav-collapsed);
     }
@@ -149,242 +208,1086 @@
 
     /* ===== SLIDES ===== */
     .slide {
-      position: absolute; width: 100%; height: 100%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
       padding: 60px 80px;
-      display: none; opacity: 0;
+      display: none;
+      opacity: 0;
       transition: opacity 0.4s ease;
       overflow: hidden;
     }
 
     .slide.active {
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       opacity: 1;
     }
 
     .slide-inner {
-      width: 100%; max-width: 1200px;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      transform: scale(1.2);
+      transform: scale(1.15);
       transform-origin: center center;
     }
 
-    /* ===== COMMON TYPOGRAPHY ===== */
-    .slide-title {
-      font-size: 44px; line-height: 1.2;
-      margin-bottom: 50px; text-align: center;
-    }
-    .title-light { font-weight: 400; color: var(--blue-accent); }
-    .title-bold { font-weight: 700; color: var(--blue-accent); }
-
-    .two-tone-title {
-      font-size: 38px; margin-bottom: 32px; line-height: 1.2;
-    }
-    .two-tone-title.centered { text-align: center; margin-bottom: 50px; }
-
-    /* ===== COMMON LOGOS ===== */
-    .slide-logo {
-      position: absolute; bottom: 30px; right: 40px;
-      height: 35px; width: auto;
-    }
-    .company-logo {
-      position: absolute; bottom: 35px; right: 50px; height: 30px;
-    }
-    .company-logo img { height: 100%; width: auto; }
-
     /* ===== COVER SLIDE ===== */
-    .slide-cover { padding: 0 !important; }
+    .slide.cover {
+      padding: 0;
+    }
 
-    .cover-split {
-      display: flex; height: 100vh; width: 100%;
+    .cover-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
     }
 
     .cover-left {
-      flex: 1;
-      background: linear-gradient(90deg, #0fa7e2, #0ab38c);
-      display: flex; flex-direction: column;
+      background: var(--gradient-brand-horizontal);
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      padding: 60px 80px;
+      padding: 80px;
       position: relative;
     }
 
     .cover-logo {
-      position: absolute; top: 40px; left: 60px;
-      height: 55px; width: auto;
+      position: absolute;
+      top: 50px;
+      left: 80px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .cover-content { max-width: 500px; }
+    .cover-logo img {
+      height: 100%;
+      filter: brightness(0) invert(1);
+    }
 
     .cover-title {
-      font-size: 56px; font-weight: 700;
-      color: white; line-height: 1.1; margin-bottom: 24px;
+      font-size: 52px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.15;
     }
 
     .cover-subtitle {
-      font-size: 22px; font-weight: 400;
-      color: rgba(255,255,255,0.9); line-height: 1.5;
+      font-size: 20px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 20px;
+      font-weight: 400;
     }
 
     .cover-right {
-      flex: 1; position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-right::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gradient-green-end) 0%, transparent 100%);
+      z-index: 1;
     }
 
     .cover-image {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .cover-image-overlay {
-      position: absolute; top: 0; left: 0;
-      width: 150px; height: 100%;
-      background: linear-gradient(90deg, #0ab38c 0%, transparent 100%);
+    /* ===== TYPOGRAPHY ===== */
+    .slide-title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 50px;
+      text-align: center;
+      background: linear-gradient(90deg, var(--gradient-blue-start), var(--gradient-green-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    /* ===== INSIGHT SLIDE ===== */
-    .insight-split {
-      display: flex; gap: 60px;
-      align-items: center; height: 100%;
-    }
-    .insight-left { flex: 1; }
-    .insight-right { flex: 1; }
-
-    .insight-paragraph {
-      font-size: 17px; color: var(--text-gray);
-      line-height: 1.7; margin-bottom: 20px;
-    }
-    .insight-paragraph strong { color: var(--text-dark); font-weight: 600; }
-
-    .insight-belief {
-      color: var(--blue-dark); font-weight: 500;
-      background: rgba(17, 169, 230, 0.08);
-      padding: 16px 20px; border-radius: 8px;
-      border-left: 4px solid var(--blue-primary);
+    .slide-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+      margin-bottom: 50px;
+      font-weight: 400;
+      max-width: 900px;
+      line-height: 1.7;
     }
 
-    .insight-image-container {
-      position: relative; width: 100%; max-width: 480px;
-      height: 360px; border-radius: 20px;
-      overflow: hidden; box-shadow: var(--shadow-lg);
+    /* ===== LAYOUT: SPLIT ===== */
+    .layout-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      width: 100%;
+      max-width: 1200px;
+      align-items: center;
     }
-    .insight-image { width: 100%; height: 100%; object-fit: cover; }
 
-    .insight-badges {
-      position: absolute; bottom: -20px; left: 20px;
-      display: flex; gap: 12px;
+    .layout-split .content-side {
+      text-align: left;
     }
-    .insight-badge {
-      background: white; padding: 10px 18px;
-      border-radius: 30px; font-size: 14px; font-weight: 600;
-      color: var(--text-dark); box-shadow: var(--shadow-md);
-    }
-    .insight-badge-value { color: var(--blue-primary); margin-right: 6px; }
 
-    /* ===== ALTERNATIVES CARDS SLIDE ===== */
-    .alternatives-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px; max-width: 1200px; width: 100%;
+    .layout-split .content-side .slide-title {
+      text-align: left;
+      margin-bottom: 35px;
     }
-    .alternative-card { text-align: center; }
-    .card-image-container {
-      margin-bottom: 24px; border-radius: 16px;
-      overflow: hidden; box-shadow: var(--shadow-md);
-    }
-    .card-image { width: 100%; height: 200px; object-fit: cover; }
-    .card-heading {
-      font-size: 20px; font-weight: 600;
-      color: var(--teal-accent); margin-bottom: 12px;
-    }
-    .card-text { font-size: 15px; color: var(--text-gray); line-height: 1.6; }
-    .card-text strong { color: var(--text-dark); }
 
-    /* ===== ALTERNATIVES TABLE SLIDE ===== */
-    .table-container { max-width: 1100px; width: 100%; margin-top: 40px; }
+    .layout-split .visual-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    .comparison-table {
-      width: 100%; border-collapse: collapse;
-      border-radius: 12px; overflow: hidden;
+    /* ===== LAYOUT: 3 COLUMNS ===== */
+    .three-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .column-card {
+      text-align: center;
+    }
+
+    .column-card .card-image {
+      width: 100%;
+      height: 200px;
+      background: var(--bg-subtle);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
       box-shadow: var(--shadow-md);
     }
-    .comparison-table thead { background: var(--blue-primary); }
+
+    .column-card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .column-card h3 {
+      font-size: 18px;
+      color: var(--blue-accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .column-card p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    .column-card p strong {
+      color: var(--text-dark);
+    }
+
+    /* ===== PARAGRAPH STYLES ===== */
+    .content-paragraph {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-gray);
+      margin-bottom: 22px;
+      text-align: left;
+    }
+
+    .content-paragraph strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .content-paragraph.highlight {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--blue-dark);
+    }
+
+    /* ===== IMAGE CONTAINER ===== */
+    .image-container {
+      width: 100%;
+      max-width: 480px;
+      height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-container .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--bg-subtle) 0%, var(--bg-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-placeholder-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 12px;
+      color: var(--text-light);
+    }
+
+    .image-placeholder-text {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: white;
+      border-radius: 12px;
+      padding: 12px 18px;
+      box-shadow: var(--shadow-md);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .floating-badge.top-right {
+      top: 20px;
+      right: -15px;
+    }
+
+    .floating-badge.bottom-left {
+      bottom: 25px;
+      left: -15px;
+    }
+
+    .floating-badge .badge-number {
+      color: #ef4444;
+      font-weight: 700;
+    }
+
+    .floating-badge svg {
+      width: 18px;
+      height: 18px;
+      color: var(--blue-accent);
+    }
+
+    /* ===== STATS CARDS ===== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      width: 100%;
+      max-width: 950px;
+    }
+
+    .stat-card {
+      background: var(--bg-white);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      border: 1px solid var(--bg-subtle);
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue-accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+
+    /* ===== VARIANT: 4 STATS ===== */
+    .stats-row-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    .stats-row-4 .stat-card {
+      padding: 30px 20px;
+    }
+
+    .stats-row-4 .stat-number {
+      font-size: 36px;
+    }
+
+    .stats-row-4 .stat-label {
+      font-size: 13px;
+    }
+
+    /* ===== VARIANT: 5 STATS ===== */
+    .stats-row-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .stats-row-5 .stat-card {
+      padding: 25px 15px;
+    }
+
+    .stats-row-5 .stat-number {
+      font-size: 30px;
+    }
+
+    .stats-row-5 .stat-label {
+      font-size: 12px;
+    }
+
+    /* ===== TABLE STYLES ===== */
+    .table-container {
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
     .comparison-table th {
-      color: white; font-weight: 600; font-size: 15px;
-      padding: 18px 24px; text-align: left;
+      background: var(--blue-primary);
+      color: white;
+      padding: 20px 30px;
+      font-weight: 600;
+      font-size: 15px;
     }
-    .comparison-table th.col-approach { width: 25%; text-align: center; }
-    .comparison-table th.col-pros,
-    .comparison-table th.col-cons { width: 37.5%; }
-    .comparison-table tbody tr { border-bottom: 1px solid var(--bg-subtle); }
-    .comparison-table tbody tr:last-child { border-bottom: none; }
+
+    .comparison-table th:first-child {
+      text-align: center;
+    }
+
+    .comparison-table th:nth-child(2),
+    .comparison-table th:nth-child(3) {
+      text-align: left;
+    }
+
     .comparison-table td {
-      padding: 20px 24px; vertical-align: top;
-      font-size: 14px; line-height: 1.6;
+      padding: 24px 30px;
+      border-bottom: 1px solid var(--bg-subtle);
+      font-size: 14px;
+      background: var(--bg-white);
     }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
     .comparison-table td:first-child {
-      background: var(--bg-light); text-align: center;
-      font-weight: 600; color: var(--text-dark);
+      font-weight: 600;
+      color: var(--text-dark);
+      text-align: center;
+      vertical-align: middle;
+      background: var(--bg-light);
     }
-    .comparison-table ul { list-style: none; padding: 0; margin: 0; }
+
+    .comparison-table td:nth-child(2),
+    .comparison-table td:nth-child(3) {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table ul {
+      list-style: none;
+      padding: 0;
+    }
+
     .comparison-table li {
-      display: flex; align-items: flex-start;
-      margin-bottom: 8px; color: var(--blue-primary);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      color: var(--text-gray);
     }
+
+    .comparison-table li:last-child {
+      margin-bottom: 0;
+    }
+
     .comparison-table li::before {
-      content: "\2022"; margin-right: 10px; font-weight: bold;
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+      flex-shrink: 0;
+      margin-top: 6px;
     }
-    .comparison-table .cons li::before { color: #f59e0b; }
-    .comparison-table li span { color: var(--text-gray); }
 
-    /* ===== MONDE IDEAL SLIDE ===== */
-    .ideals-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px; max-width: 1100px; width: 100%; margin-top: 50px;
+    /* ===== FEATURE GRID (3 items) ===== */
+    .feature-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 60px;
+      width: 100%;
+      max-width: 1100px;
     }
-    .ideal-card {
+
+    /* ===== FEATURE GRID (4 items, 2x2) ===== */
+    .feature-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px 80px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--blue-primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .feature-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .feature-content p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    /* ===== FEATURE GRID (5 items, 3+2 centered) ===== */
+    .feature-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 55px 25px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .feature-grid-5 .feature-item:nth-child(1) { grid-column: 1 / 3; }
+    .feature-grid-5 .feature-item:nth-child(2) { grid-column: 3 / 5; }
+    .feature-grid-5 .feature-item:nth-child(3) { grid-column: 5 / 7; }
+    .feature-grid-5 .feature-item:nth-child(4) { grid-column: 2 / 4; }
+    .feature-grid-5 .feature-item:nth-child(5) { grid-column: 4 / 6; }
+
+    .feature-grid-5 .feature-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+    }
+
+    .feature-grid-5 .feature-icon svg {
+      width: 24px; height: 24px;
+    }
+
+    .feature-grid-5 .feature-content h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .feature-grid-5 .feature-content p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ===== VALUE DETAIL SLIDE ===== */
+    .value-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      width: 100%;
+      max-width: 1150px;
+      align-items: center;
+      transform: scale(1.15);
+      transform-origin: center center;
+    }
+
+    .value-detail-content {
+      text-align: left;
+    }
+
+    .value-detail-content h2 {
+      font-size: 38px;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--gradient-blue-start), var(--gradient-green-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+
+    .value-detail-list {
+      list-style: none;
+    }
+
+    .value-detail-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 17px;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .value-detail-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .value-detail-list .check-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      color: var(--blue-accent);
+      margin-top: 2px;
+    }
+
+    .value-detail-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-image-container {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      box-shadow:
+        0 0 60px 20px rgba(17, 169, 230, 0.25),
+        0 0 100px 40px rgba(10, 179, 140, 0.15),
+        0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-image-container img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .value-image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+    }
+
+    .value-image-placeholder svg {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      opacity: 0.5;
+    }
+
+    .value-image-placeholder span {
+      font-size: 14px;
+    }
+
+    /* ===== PROCESS TIMELINE ===== */
+    .process-timeline {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .process-step {
+      text-align: center;
+      flex: 1;
+      max-width: 260px;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-brand-horizontal);
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .step-duration {
+      font-size: 14px;
+      color: var(--blue-accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .step-description {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    .step-arrow {
+      font-size: 24px;
+      color: var(--text-light);
+      margin-top: 30px;
+      flex-shrink: 0;
+    }
+
+    /* ===== VARIANT: 4 STEPS TIMELINE ===== */
+    .process-timeline-4 {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .process-timeline-4 .process-step {
+      text-align: center;
+      flex: 1;
+      max-width: 220px;
+    }
+
+    .process-timeline-4 .step-number {
+      width: 70px;
+      height: 70px;
+      font-size: 28px;
+      margin: 0 auto 20px;
+    }
+
+    .process-timeline-4 .step-title {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .process-timeline-4 .step-duration {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .process-timeline-4 .step-description {
+      font-size: 13px;
+    }
+
+    .process-timeline-4 .step-arrow {
+      font-size: 20px;
+      margin-top: 25px;
+    }
+
+    /* ===== REQUIREMENTS LIST ===== */
+    .requirements-box {
+      background: var(--bg-light);
+      border-radius: 20px;
+      padding: 45px 55px;
+      border-left: 5px solid var(--blue-accent);
+      text-align: left;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .requirements-box h4 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+    }
+
+    .requirements-box ul {
+      list-style: none;
+    }
+
+    .requirements-box li {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+      font-size: 17px;
+      color: var(--text-gray);
+      border-bottom: 1px solid var(--bg-subtle);
+    }
+
+    .requirements-box li:last-child {
+      border-bottom: none;
+    }
+
+    .requirements-box li .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gradient-brand-horizontal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .requirements-box li .check-icon svg {
+      width: 16px;
+      height: 16px;
+      color: white;
+    }
+
+    /* ===== LOGO ===== */
+    .company-logo {
+      position: absolute;
+      bottom: 35px;
+      right: 50px;
+      height: 30px;
+    }
+
+    .company-logo img {
+      height: 100%;
+      width: auto;
+    }
+
+    /* ===== FAQ CARDS ===== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .faq-card {
+      background: var(--bg-white);
+      border-radius: 18px;
+      padding: 38px 44px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--bg-subtle);
+      text-align: left;
+    }
+
+    .faq-card h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--blue-accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-card h4 svg {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+
+    .faq-card p {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* ===== QUOTE STYLE ===== */
+    .quote-block {
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 35px 45px;
+      border-left: 4px solid var(--blue-accent);
+      max-width: 800px;
+      text-align: left;
+      margin-bottom: 50px;
+    }
+
+    .quote-block p {
+      font-style: italic;
+      color: var(--text-dark);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .quote-block .quote-author {
+      margin-top: 18px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--text-gray);
+      font-size: 14px;
+    }
+
+    /* ===== IDEAL WORLD CARDS ===== */
+    .ideal-card .card-image {
       background: linear-gradient(135deg, #e0f4f8 0%, #e3f9ed 100%);
-      border-radius: 20px; padding: 40px 30px; text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .ideal-icon {
-      width: 80px; height: 80px; margin: 0 auto 24px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .ideal-icon svg { width: 65px; height: 65px; color: var(--blue-accent); }
-    .ideal-heading {
-      font-size: 18px; font-weight: 600;
-      color: var(--teal-accent); margin-bottom: 12px;
-    }
-    .ideal-description { font-size: 15px; color: var(--text-gray); line-height: 1.6; }
 
-    /* 6-item variant */
-    .ideals-grid.six-items { gap: 25px 35px; }
-    .ideals-grid.six-items .ideal-card { padding: 28px 22px; }
-    .ideals-grid.six-items .ideal-icon { width: 60px; height: 60px; margin-bottom: 16px; }
-    .ideals-grid.six-items .ideal-icon svg { width: 48px; height: 48px; }
-    .ideals-grid.six-items .ideal-heading { font-size: 16px; margin-bottom: 8px; }
-    .ideals-grid.six-items .ideal-description { font-size: 13px; }
+    .ideal-card .card-image svg {
+      width: 65px;
+      height: 65px;
+      color: var(--blue-accent);
+    }
+
+    /* ===== VARIANT: 6 ITEMS (2x3 grid) ===== */
+    .three-columns.two-rows {
+      grid-template-rows: repeat(2, auto);
+      gap: 30px 40px;
+    }
+
+    .three-columns.two-rows .column-card .card-image {
+      height: 160px;
+    }
+
+    .three-columns.two-rows .column-card h3 {
+      font-size: 16px;
+    }
+
+    .three-columns.two-rows .column-card p {
+      font-size: 13px;
+    }
+
+    /* ===== LAYOUT: 4 COLUMNS ===== */
+    .four-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .four-columns .column-card .card-image {
+      height: 160px;
+    }
+
+    .four-columns .column-card h3 {
+      font-size: 15px;
+    }
+
+    .four-columns .column-card p {
+      font-size: 13px;
+    }
+
+    /* ===== KEYBOARD HINT ===== */
+    .keyboard-hint {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 8px;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      margin: 0 2px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .key:hover {
+      background: var(--blue-primary);
+      color: white;
+    }
+
+    .key:active {
+      transform: scale(0.95);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide.active .slide-title,
+    .slide.active .cover-title,
+    .slide.active .value-detail-content h2 {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .slide.active .slide-subtitle,
+    .slide.active .cover-subtitle {
+      animation: fadeInUp 0.5s ease 0.1s forwards;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    .slide.active .content-paragraph {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .slide.active .content-paragraph:nth-child(2) { animation-delay: 0.1s; }
+    .slide.active .content-paragraph:nth-child(3) { animation-delay: 0.15s; }
+    .slide.active .content-paragraph:nth-child(4) { animation-delay: 0.2s; }
+
+    .slide.active .column-card,
+    .slide.active .stat-card,
+    .slide.active .faq-card,
+    .slide.active .feature-item,
+    .slide.active .process-step {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .slide.active .column-card:nth-child(1),
+    .slide.active .stat-card:nth-child(1),
+    .slide.active .feature-item:nth-child(1) { animation-delay: 0.15s; }
+    .slide.active .column-card:nth-child(2),
+    .slide.active .stat-card:nth-child(2),
+    .slide.active .feature-item:nth-child(2) { animation-delay: 0.25s; }
+    .slide.active .column-card:nth-child(3),
+    .slide.active .stat-card:nth-child(3),
+    .slide.active .feature-item:nth-child(3) { animation-delay: 0.35s; }
+    .slide.active .feature-item:nth-child(4) { animation-delay: 0.45s; }
+    .slide.active .feature-item:nth-child(5) { animation-delay: 0.55s; }
+
+    /* Process steps: use nth-of-type because <span class="step-arrow"> siblings break nth-child */
+    .slide.active .process-step:nth-of-type(1) { animation-delay: 0.15s; }
+    .slide.active .process-step:nth-of-type(2) { animation-delay: 0.30s; }
+    .slide.active .process-step:nth-of-type(3) { animation-delay: 0.45s; }
+    .slide.active .process-step:nth-of-type(4) { animation-delay: 0.60s; }
+
+    .slide.active .faq-card:nth-child(1) { animation-delay: 0.1s; }
+    .slide.active .faq-card:nth-child(2) { animation-delay: 0.2s; }
+    .slide.active .faq-card:nth-child(3) { animation-delay: 0.3s; }
+    .slide.active .faq-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .slide.active .value-detail-list li {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .slide.active .value-detail-list li:nth-child(1) { animation-delay: 0.15s; }
+    .slide.active .value-detail-list li:nth-child(2) { animation-delay: 0.25s; }
+    .slide.active .value-detail-list li:nth-child(3) { animation-delay: 0.35s; }
+    .slide.active .value-detail-list li:nth-child(4) { animation-delay: 0.45s; }
+
+    .slide.active .testimonial-card {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+    .slide.active .testimonial-card:nth-child(1) { animation-delay: 0.15s; }
+    .slide.active .testimonial-card:nth-child(2) { animation-delay: 0.3s; }
+    .slide.active .testimonial-card:nth-child(3) { animation-delay: 0.45s; }
+
+    .slide.active .requirements-box li {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+    .slide.active .requirements-box li:nth-child(1) { animation-delay: 0.15s; }
+    .slide.active .requirements-box li:nth-child(2) { animation-delay: 0.25s; }
+    .slide.active .requirements-box li:nth-child(3) { animation-delay: 0.35s; }
 
     /* ===== INTRODUCTION SLIDE - HERO LAYOUT ===== */
-    .slide-introduction { padding: 0 !important; }
+    .slide-introduction {
+      padding: 0;
+    }
 
     .slide-introduction .slide-inner {
       transform: scale(1.0);
       justify-content: flex-start;
-      padding-top: 0; max-width: none; width: 100%;
+      padding-top: 0;
+      max-width: none;
+      width: 100%;
     }
 
     .intro-hero {
-      width: 100vw; max-width: none;
-      height: 70vh; position: relative;
-      overflow: hidden; margin-bottom: 30px;
+      width: 100vw;
+      max-width: none;
+      height: 70vh;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
     }
 
     .intro-hero-collage {
-      display: flex; width: max-content; height: 100%;
+      display: flex;
+      width: max-content;
+      height: 100%;
       animation: scrollCarousel 45s linear infinite;
     }
+
     .intro-hero-collage img {
-      width: auto; height: 100%;
-      object-fit: contain; flex-shrink: 0;
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     @keyframes scrollCarousel {
@@ -393,7 +1296,8 @@
     }
 
     .intro-hero::after {
-      content: ''; position: absolute;
+      content: '';
+      position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(
         180deg,
@@ -406,63 +1310,103 @@
     }
 
     .intro-hero-logo {
-      position: absolute; top: 30px; left: 40px; z-index: 3;
+      position: absolute;
+      top: 30px; left: 40px; z-index: 3;
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      padding: 16px 24px; border-radius: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 16px 24px;
+      border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .intro-hero-logo img { height: 44px; width: auto; display: block; }
+
+    .intro-hero-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
 
     .intro-title-band {
-      position: absolute; bottom: 140px;
-      left: 50%; transform: translateX(-50%); z-index: 3;
+      position: absolute;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      padding: 20px 60px; border-radius: 12px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 20px 60px;
+      border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     }
 
     .intro-offer-title {
-      font-size: 42px; font-weight: 700;
-      text-align: center; letter-spacing: -0.5px; margin: 0;
+      font-size: 42px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -0.5px;
+      margin: 0;
       background: linear-gradient(90deg, var(--gradient-blue-start), var(--gradient-green-end));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .intro-stats {
-      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      position: absolute;
+      bottom: 0; left: 0; right: 0; z-index: 2;
       background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      display: flex; justify-content: center; gap: 0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      gap: 0;
       padding: 28px 60px;
     }
 
     .intro-stat-card {
       background: transparent;
-      padding: 16px 50px; text-align: center;
+      padding: 16px 70px;
+      text-align: center;
       border-right: 1px solid #e0e0e0;
     }
-    .intro-stat-card:last-child { border-right: none; }
+
+    .intro-stat-card:last-child {
+      border-right: none;
+    }
 
     .intro-stat-number {
-      font-size: 44px; font-weight: 700;
-      color: var(--blue-accent); line-height: 1; margin-bottom: 8px;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue-accent);
+      line-height: 1;
+      margin-bottom: 8px;
     }
+
     .intro-stat-label {
-      font-size: 12px; font-weight: 600;
-      color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .intro-content {
-      text-align: center; max-width: 1000px;
-      margin: 0 auto; padding: 0 40px;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
     }
+
     .intro-pitch {
-      font-size: 18px; color: var(--text-dark);
-      line-height: 1.7; margin: 0; font-weight: 400;
+      font-size: 18px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin: 0;
+      font-weight: 400;
     }
 
     @keyframes fadeInUpCentered {
@@ -470,147 +1414,93 @@
       to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
 
-    .slide-introduction.active .intro-hero-logo { animation: fadeInUp 0.5s ease 0.1s forwards; opacity: 0; }
-    .slide-introduction.active .intro-title-band { animation: fadeInUpCentered 0.6s ease 0.3s forwards; opacity: 0; }
-    .slide-introduction.active .intro-stat-card { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+    .slide-introduction.active .intro-hero-logo {
+      animation: fadeInUp 0.5s ease 0.1s forwards;
+      opacity: 0;
+    }
+    .slide-introduction.active .intro-title-band {
+      animation: fadeInUpCentered 0.6s ease 0.3s forwards;
+      opacity: 0;
+    }
+    .slide-introduction.active .intro-stat-card {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
     .slide-introduction.active .intro-stat-card:nth-child(1) { animation-delay: 0.5s; }
     .slide-introduction.active .intro-stat-card:nth-child(2) { animation-delay: 0.65s; }
     .slide-introduction.active .intro-stat-card:nth-child(3) { animation-delay: 0.8s; }
     .slide-introduction.active .intro-stat-card:nth-child(4) { animation-delay: 0.95s; }
-    .slide-introduction.active .intro-pitch { animation: fadeInUp 0.5s ease 1.1s forwards; opacity: 0; }
-
-    /* ===== VALUE OVERVIEW SLIDE ===== */
-    .value-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 50px 80px; max-width: 1000px; width: 100%; margin-top: 50px;
+    .slide-introduction.active .intro-pitch {
+      animation: fadeInUp 0.5s ease 1s forwards;
+      opacity: 0;
     }
 
-    .value-grid-3 {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 40px; max-width: 1100px; width: 100%; margin-top: 50px;
-    }
-
-    .value-card {
-      display: flex; align-items: flex-start; gap: 20px;
-    }
-
-    .value-icon {
-      flex-shrink: 0; width: 64px; height: 64px;
-      background: linear-gradient(135deg, #0fa7e2, #0ab38c);
-      border-radius: 18px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .value-icon svg { width: 32px; height: 32px; color: white; }
-    .value-content { flex: 1; }
-    .value-title {
-      font-size: 18px; font-weight: 600;
-      color: var(--text-dark); margin-bottom: 8px;
-    }
-    .value-description {
-      font-size: 14px; color: var(--text-gray); line-height: 1.5;
-    }
-
-    /* ===== VALUE DETAIL SLIDE ===== */
-    .slide-value-detail { padding: 60px 80px; }
-
-    .value-detail-split {
-      display: flex; gap: 60px;
-      align-items: center; height: 100%;
-      transform: scale(1.15);
-      transform-origin: center center;
-    }
-    .value-detail-left { flex: 1; }
-    .value-detail-right { flex: 1; }
-
-    .value-detail-title {
-      font-size: 38px; font-weight: 700;
-      margin-bottom: 40px; line-height: 1.2;
-      background: linear-gradient(90deg, var(--gradient-blue-start), var(--gradient-green-end));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .value-features { list-style: none; padding: 0; margin: 0; }
-    .value-features li {
-      display: flex; align-items: flex-start; gap: 16px;
-      margin-bottom: 20px; font-size: 17px;
-      color: var(--text-dark); line-height: 1.5;
-    }
-
-    .check-icon {
-      flex-shrink: 0; width: 26px; height: 26px; color: var(--blue-accent);
-    }
-    .check-icon svg { width: 100%; height: 100%; }
-
-    .value-detail-image-container {
-      background: var(--bg-light); border-radius: 20px;
-      padding: 20px; box-shadow: var(--shadow-lg);
-    }
-    .value-detail-image {
-      width: 100%; height: auto; border-radius: 12px;
-    }
-
-    /* ===== OPTIONS SLIDE ===== */
-    .options-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 30px; max-width: 900px; width: 100%;
-    }
-
-    .option-card { text-align: center; }
-    .option-card .card-image-container {
-      margin-bottom: 20px; border-radius: 16px;
-      overflow: hidden; box-shadow: var(--shadow-md);
-    }
-    .option-card .card-image { width: 100%; height: 180px; object-fit: cover; }
-    .option-card h3 {
-      font-size: 17px; font-weight: 600;
-      color: var(--blue-accent); margin-bottom: 10px;
-    }
-    .option-card p {
-      font-size: 14px; color: var(--text-gray); line-height: 1.6;
-    }
-
-    /* ===== PREUVES - TESTIMONIAL FLIP CARDS ===== */
+    /* ===== TESTIMONIAL FLIP CARDS ===== */
     .testimonial-grid {
-      display: grid; gap: 40px; width: 100%;
-      max-width: 1100px; perspective: 1000px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+      perspective: 1000px;
     }
+
     .testimonial-grid.count-3 { grid-template-columns: repeat(3, 1fr); }
     .testimonial-grid.count-2 { grid-template-columns: repeat(2, 1fr); max-width: 750px; margin: 0 auto; }
     .testimonial-grid.count-1 { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
 
     .testimonial-card {
-      position: relative; height: 420px;
+      position: relative;
+      height: 420px;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .testimonial-card:hover { transform: translateY(-8px); }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+    }
 
     .testimonial-card-inner {
-      position: relative; width: 100%; height: 100%;
+      position: relative;
+      width: 100%;
+      height: 100%;
       transition: transform 0.6s ease;
       transform-style: preserve-3d;
     }
-    .testimonial-card:hover .testimonial-card-inner { transform: rotateY(180deg); }
 
-    .testimonial-front, .testimonial-back {
-      position: absolute; top: 0; left: 0;
+    .testimonial-card:hover .testimonial-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .testimonial-front,
+    .testimonial-back {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%; height: 100%;
       backface-visibility: hidden;
-      border-radius: 24px; overflow: hidden;
+      border-radius: 24px;
+      overflow: hidden;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .testimonial-front { background: var(--bg-white); }
+    .testimonial-front {
+      background: var(--bg-white);
+    }
+
     .testimonial-front > img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%;
+      object-fit: cover;
       transition: transform 0.4s ease;
     }
-    .testimonial-card:hover .testimonial-front > img { transform: scale(1.05); }
+
+    .testimonial-card:hover .testimonial-front > img {
+      transform: scale(1.05);
+    }
 
     .testimonial-front::after {
-      content: ''; position: absolute;
+      content: '';
+      position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(
         180deg,
@@ -622,34 +1512,60 @@
     }
 
     .testimonial-logo {
-      position: absolute; top: 20px; left: 20px;
+      position: absolute;
+      top: 20px; left: 20px;
       background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      padding: 12px 16px; border-radius: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 12px 16px;
+      border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.5);
       z-index: 2;
     }
+
+    .testimonial-card:hover .testimonial-logo {
+      transform: scale(1.05);
+    }
+
     .testimonial-logo img {
-      height: 28px; width: auto; max-width: 100px;
-      object-fit: contain; display: block;
+      height: 30px;
+      width: auto;
+      max-width: 110px;
+      object-fit: contain;
+      display: block;
     }
 
     .testimonial-title {
-      position: absolute; bottom: 80px; left: 24px; right: 24px;
-      font-size: 19px; font-weight: 700; color: white;
-      line-height: 1.4; margin: 0; z-index: 2;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      position: absolute;
+      bottom: 80px;
+      left: 24px; right: 24px;
+      font-size: 19px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.35;
+      margin: 0;
+      z-index: 2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3);
+      letter-spacing: -0.01em;
     }
 
     .testimonial-hint {
-      position: absolute; bottom: 20px; right: 20px;
-      display: flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, var(--blue-primary), var(--teal-accent));
-      color: white; font-size: 13px; font-weight: 600;
-      padding: 10px 18px; border-radius: 24px; z-index: 2;
+      position: absolute;
+      bottom: 20px; right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--blue-primary), var(--gradient-green-end));
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 24px;
+      z-index: 2;
       box-shadow: 0 4px 16px rgba(0,61,121,0.4), 0 0 20px rgba(0,61,121,0.2);
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
     .testimonial-hint svg {
       width: 16px; height: 16px;
       animation: spin-hint 2s ease-in-out infinite;
@@ -661,298 +1577,222 @@
     }
 
     .testimonial-card:hover .testimonial-hint {
-      opacity: 0; transform: scale(0.9);
+      opacity: 0;
+      transform: translateY(10px);
     }
 
     .testimonial-back {
       background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
       transform: rotateY(180deg);
-      display: flex; flex-direction: column;
-      padding: 28px 28px 24px; text-align: left;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 28px 24px;
+      text-align: left;
     }
 
     .testimonial-stars {
-      display: flex; justify-content: space-between;
-      align-items: center; width: 100%; margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 16px;
     }
-    .testimonial-stars-icons { color: #fbbf24; font-size: 16px; letter-spacing: 2px; }
-    .testimonial-date { color: var(--text-gray); font-size: 14px; }
+
+    .testimonial-stars-icons {
+      color: #fbbf24;
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    .testimonial-date {
+      color: var(--text-gray);
+      font-size: 13px;
+      font-style: italic;
+    }
 
     .testimonial-quote-section {
-      flex: 1; display: flex; flex-direction: column;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
     }
 
     .testimonial-quote {
-      color: var(--text-dark); font-size: 14px;
-      font-style: normal; line-height: 1.7;
-      margin-bottom: 16px; text-align: justify;
+      color: var(--text-dark);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 16px;
     }
+
     .testimonial-quote::before {
-      content: '\201C'; font-size: 28px; font-family: Georgia, serif;
-      color: var(--blue-primary); opacity: 0.5;
-      margin-right: 4px; line-height: 0; vertical-align: middle;
+      content: '\201C';
+      font-size: 28px;
+      font-family: Georgia, serif;
+      color: var(--blue-primary);
+      opacity: 0.5;
+      margin-right: 4px;
+      line-height: 0;
     }
+
     .testimonial-quote::after {
-      content: '\201D'; font-size: 28px; font-family: Georgia, serif;
-      color: var(--blue-primary); opacity: 0.5;
-      margin-left: 4px; line-height: 0; vertical-align: middle;
+      content: '\201D';
+      font-size: 28px;
+      font-family: Georgia, serif;
+      color: var(--blue-primary);
+      opacity: 0.5;
+      margin-left: 4px;
+      line-height: 0;
     }
 
     .testimonial-cta {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: linear-gradient(135deg, var(--blue-primary), var(--gradient-green-end));
-      color: white; font-size: 14px; font-weight: 600;
-      text-decoration: none; margin-top: 12px;
-      padding: 10px 20px; border-radius: 24px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 12px;
+      padding: 10px 20px;
+      border-radius: 24px;
       box-shadow: 0 4px 12px rgba(0,61,121,0.3);
       transition: all 0.2s ease;
     }
-    .testimonial-cta::after { content: '\2192'; display: inline-block; transition: transform 0.2s ease; }
-    .testimonial-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,61,121,0.4); }
-    .testimonial-cta:hover::after { transform: translateX(4px); }
+
+    .testimonial-cta::after {
+      content: '\2192';
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .testimonial-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,61,121,0.4);
+    }
+
+    .testimonial-cta:hover::after {
+      transform: translateX(4px);
+    }
 
     .testimonial-author {
-      margin-top: auto; padding-top: 16px;
+      margin-top: auto;
+      padding-top: 16px;
       border-top: 1px solid #e5e5e5;
     }
-    .testimonial-name { font-size: 14px; font-weight: 600; color: var(--text-dark); display: block; margin-bottom: 2px; }
-    .testimonial-position { font-size: 12px; color: var(--text-gray); display: block; margin-bottom: 8px; }
+
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .testimonial-position {
+      font-size: 12px;
+      color: var(--text-gray);
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .testimonial-company-logo {
-      height: 22px; width: auto; max-width: 70px;
-      object-fit: contain; opacity: 0.7; display: block;
+      height: 22px;
+      width: auto;
+      max-width: 70px;
+      object-fit: contain;
+      opacity: 0.7;
+      display: block;
     }
 
-    /* ===== QUESTIONS / FAQ SLIDE ===== */
-    .faq-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 30px; max-width: 1000px; width: 100%; margin-top: 40px;
-    }
-    .faq-card {
-      background: white; border: 1px solid var(--bg-subtle);
-      border-radius: 16px; padding: 28px;
-    }
-    .faq-header {
-      display: flex; align-items: center;
-      gap: 14px; margin-bottom: 14px;
-    }
-    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; color: var(--blue-accent); }
-    .faq-icon svg { width: 100%; height: 100%; }
-    .faq-question { font-size: 16px; font-weight: 600; color: var(--blue-accent); line-height: 1.3; }
-    .faq-answer { font-size: 14px; color: var(--text-gray); line-height: 1.6; padding-left: 42px; }
-
-    /* ===== PROCESSUS SLIDE ===== */
-    .timeline {
-      display: flex; align-items: flex-start;
-      justify-content: center; gap: 20px;
-      margin-top: 60px; max-width: 1200px;
-    }
-    .timeline-step { text-align: center; flex: 1; max-width: 220px; }
-    .step-number {
-      width: 80px; height: 80px;
-      background: linear-gradient(135deg, #0fa7e2, #0ab38c);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 32px; font-weight: 700; color: white;
-      margin: 0 auto 20px;
-    }
-    .step-content { padding: 0 10px; }
-    .step-name { font-size: 17px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-    .step-duration { font-size: 14px; font-weight: 600; color: var(--blue-accent); margin-bottom: 10px; }
-    .step-description { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
-    .timeline-arrow { font-size: 28px; color: var(--text-light); padding-top: 25px; }
-
-    /* ===== DEMARRAGE SLIDE ===== */
-    .demarrage-box {
-      background: var(--bg-light);
-      border-left: 5px solid var(--blue-primary);
-      border-radius: 0 16px 16px 0;
-      padding: 40px 50px; max-width: 700px;
-      width: 100%; margin: 40px 0;
-    }
-    .demarrage-section-title { font-size: 20px; font-weight: 600; color: var(--text-dark); margin-bottom: 24px; }
-
-    .requirements-list { list-style: none; padding: 0; margin: 0; }
-    .requirements-list li {
-      display: flex; align-items: center; gap: 16px;
-      padding: 16px 0; border-bottom: 1px solid var(--bg-subtle);
-      font-size: 16px; color: var(--text-dark);
-    }
-    .requirements-list li:last-child { border-bottom: none; }
-
-    .req-check {
-      flex-shrink: 0; width: 32px; height: 32px;
-      background: linear-gradient(135deg, #0fa7e2, #0ab38c);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .req-check svg { width: 18px; height: 18px; color: white; }
-
+    /* ===== CTA BOX ===== */
     .cta-box {
       background: linear-gradient(90deg, #0fa7e2, #0ab38c);
-      border-radius: 12px; padding: 24px 40px; margin-top: 20px;
-    }
-    .cta-text { font-size: 20px; font-weight: 600; color: white; text-align: center; }
-
-    /* ===== KEYBOARD HINT ===== */
-    .keyboard-hint {
-      position: fixed; bottom: 25px; left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px; color: var(--text-light);
-      display: flex; align-items: center; gap: 20px;
-    }
-    .key {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 3px 8px; background: var(--bg-subtle);
-      border-radius: 4px; font-family: monospace; font-size: 11px;
-      margin: 0 2px; cursor: pointer;
-      transition: all 0.15s ease; user-select: none;
-    }
-    .key:hover { background: var(--blue-primary); color: white; }
-    .key:active { transform: scale(0.95); }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
+      border-radius: 12px;
+      padding: 24px 40px;
+      margin-top: 20px;
     }
 
-    .slide.active .slide-title,
-    .slide.active .cover-title,
-    .slide.active .two-tone-title,
-    .slide.active .value-detail-title {
-      animation: fadeInUp 0.5s ease forwards;
+    .cta-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      text-align: center;
     }
-
-    .slide.active .cover-subtitle {
-      animation: fadeInUp 0.5s ease 0.1s forwards;
-      opacity: 0; animation-fill-mode: forwards;
-    }
-
-    .slide.active .insight-paragraph {
-      animation: fadeInUp 0.5s ease forwards; opacity: 0;
-    }
-    .slide.active .insight-paragraph:nth-child(1) { animation-delay: 0.1s; }
-    .slide.active .insight-paragraph:nth-child(2) { animation-delay: 0.2s; }
-    .slide.active .insight-paragraph:nth-child(3) { animation-delay: 0.3s; }
-
-    .slide.active .alternative-card,
-    .slide.active .ideal-card,
-    .slide.active .value-card,
-    .slide.active .option-card,
-    .slide.active .faq-card,
-    .slide.active .timeline-step {
-      animation: fadeInUp 0.5s ease forwards; opacity: 0;
-    }
-
-    .slide.active .alternative-card:nth-child(1),
-    .slide.active .ideal-card:nth-child(1),
-    .slide.active .value-card:nth-child(1),
-    .slide.active .option-card:nth-child(1),
-    .slide.active .timeline-step:nth-child(1) { animation-delay: 0.15s; }
-
-    .slide.active .alternative-card:nth-child(2),
-    .slide.active .ideal-card:nth-child(2),
-    .slide.active .value-card:nth-child(2),
-    .slide.active .option-card:nth-child(2) { animation-delay: 0.25s; }
-
-    .slide.active .alternative-card:nth-child(3),
-    .slide.active .ideal-card:nth-child(3),
-    .slide.active .value-card:nth-child(3),
-    .slide.active .option-card:nth-child(3),
-    .slide.active .timeline-step:nth-child(3) { animation-delay: 0.35s; }
-
-    .slide.active .ideal-card:nth-child(4),
-    .slide.active .option-card:nth-child(4) { animation-delay: 0.45s; }
-
-    .slide.active .ideal-card:nth-child(5) { animation-delay: 0.55s; }
-    .slide.active .ideal-card:nth-child(6) { animation-delay: 0.65s; }
-
-    .slide.active .faq-card:nth-child(1) { animation-delay: 0.1s; }
-    .slide.active .faq-card:nth-child(2) { animation-delay: 0.2s; }
-    .slide.active .faq-card:nth-child(3) { animation-delay: 0.3s; }
-    .slide.active .faq-card:nth-child(4) { animation-delay: 0.4s; }
-
-    .slide.active .timeline-step:nth-child(2) { animation-delay: 0.25s; }
-    .slide.active .timeline-step:nth-child(5) { animation-delay: 0.35s; }
-    .slide.active .timeline-step:nth-child(7) { animation-delay: 0.45s; }
-
-    .slide.active .value-features li {
-      animation: fadeInUp 0.5s ease forwards; opacity: 0;
-    }
-    .slide.active .value-features li:nth-child(1) { animation-delay: 0.15s; }
-    .slide.active .value-features li:nth-child(2) { animation-delay: 0.25s; }
-    .slide.active .value-features li:nth-child(3) { animation-delay: 0.35s; }
-    .slide.active .value-features li:nth-child(4) { animation-delay: 0.45s; }
-
-    .slide.active .testimonial-card {
-      animation: fadeInUp 0.5s ease forwards; opacity: 0;
-    }
-    .slide.active .testimonial-card:nth-child(1) { animation-delay: 0.15s; }
-    .slide.active .testimonial-card:nth-child(2) { animation-delay: 0.3s; }
-
-    .slide.active .requirements-list li {
-      animation: fadeInUp 0.5s ease forwards; opacity: 0;
-    }
-    .slide.active .requirements-list li:nth-child(1) { animation-delay: 0.15s; }
-    .slide.active .requirements-list li:nth-child(2) { animation-delay: 0.25s; }
-    .slide.active .requirements-list li:nth-child(3) { animation-delay: 0.35s; }
   </style>
 </head>
 <body>
 
   <!-- Chapter Navigation -->
   <nav class="chapter-nav">
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <div class="nav-header">
       <div class="nav-logo">
         <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
       </div>
-      <a href="https://www.ayming.fr/ressources-humaines/arrets-de-travail/collecter-les-arrets-de-travail/?utm_source=slides-sales&utm_medium=print&utm_campaign=collecte-arrets" target="_blank" class="nav-subtitle">Collecte des Arrêts</a>
+      <a class="nav-subtitle" href="https://www.ayming.fr/ressources-humaines/arrets-de-travail/collecter-les-arrets-de-travail/?utm_source=slides-sales&utm_medium=print&utm_campaign=collecte-arrets" target="_blank">Collecte des Arrêts de Travail</a>
     </div>
 
     <div class="nav-section">
-      <div class="nav-section-title">Le March&eacute;</div>
+      <div class="nav-section-title">Le Marché</div>
       <div class="nav-item active" data-slide="0">
-        <span class="nav-item-number">01</span> Couverture
+        <span class="nav-item-number">01</span>
+        Couverture
       </div>
       <div class="nav-item" data-slide="1">
-        <span class="nav-item-number">02</span> Insight
+        <span class="nav-item-number">02</span>
+        Insight
       </div>
       <div class="nav-item" data-slide="2">
-        <span class="nav-item-number">03</span> Alternatives
+        <span class="nav-item-number">03</span>
+        Alternatives
       </div>
       <div class="nav-item" data-slide="3">
-        <span class="nav-item-number">04</span> Comparaison
+        <span class="nav-item-number">04</span>
+        Comparaison
       </div>
       <div class="nav-item" data-slide="4">
-        <span class="nav-item-number">05</span> Monde Id&eacute;al
+        <span class="nav-item-number">05</span>
+        Monde Idéal
       </div>
     </div>
 
     <div class="nav-section">
       <div class="nav-section-title">Notre Solution</div>
       <div class="nav-item" data-slide="5">
-        <span class="nav-item-number">06</span> Introduction
+        <span class="nav-item-number">06</span>
+        Introduction
       </div>
       <div class="nav-item" data-slide="6">
-        <span class="nav-item-number">07</span> Valeur
+        <span class="nav-item-number">07</span>
+        Valeur
       </div>
+      <!-- Value detail slides (7-9) map to nav item 6 -->
       <div class="nav-item" data-slide="10">
-        <span class="nav-item-number">08</span> Options
+        <span class="nav-item-number">08</span>
+        Options
       </div>
       <div class="nav-item" data-slide="11">
-        <span class="nav-item-number">09</span> Preuves
+        <span class="nav-item-number">09</span>
+        Preuves
       </div>
       <div class="nav-item" data-slide="12">
-        <span class="nav-item-number">10</span> Questions
+        <span class="nav-item-number">10</span>
+        Questions
       </div>
       <div class="nav-item" data-slide="13">
-        <span class="nav-item-number">11</span> Processus
+        <span class="nav-item-number">11</span>
+        Processus
       </div>
       <div class="nav-item" data-slide="14">
-        <span class="nav-item-number">12</span> D&eacute;marrage
+        <span class="nav-item-number">12</span>
+        Démarrage
       </div>
     </div>
   </nav>
@@ -963,479 +1803,61 @@
   <!-- Presentation -->
   <main class="presentation">
 
-    <!-- ==================== SLIDE 0: COVER ==================== -->
-    <section class="slide slide-cover active" data-slide="0">
-      <div class="cover-split">
+    <!-- ========== SLIDES GO HERE ========== -->
+
+    <!-- SLIDE 0: COVER -->
+    <section class="slide cover active" data-chapter="cover">
+      <div class="cover-layout">
         <div class="cover-left">
-          <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="cover-logo" style="filter: brightness(0) invert(1);">
-          <div class="cover-content">
-            <h1 class="cover-title">Collecte des<br>Arr&ecirc;ts de Travail</h1>
-            <p class="cover-subtitle">Simplifier la collecte et le traitement de vos arr&ecirc;ts pour une paie fiable et des IJSS r&eacute;cup&eacute;r&eacute;es</p>
-          </div>
-        </div>
-        <div class="cover-right">
-          <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Collecte des Arr&ecirc;ts" class="cover-image">
-          <div class="cover-image-overlay"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SLIDE 1: INSIGHT ==================== -->
-    <section class="slide slide-insight" data-slide="1">
-      <div class="insight-split">
-        <div class="insight-left">
-          <h2 class="two-tone-title">
-            <span class="title-light">Arr&ecirc;ts de travail :</span><br>
-            <span class="title-bold">quand la collecte devient le probl&egrave;me</span>
-          </h2>
-          <div class="insight-content">
-            <p class="insight-paragraph">Les entreprises n'ont pas un probl&egrave;me d'absent&eacute;isme. Elles ont un <strong>probl&egrave;me de flux d'information</strong> : les arr&ecirc;ts arrivent de partout, personne ne les contr&ocirc;le, et la paie passe son temps &agrave; relancer au lieu de traiter.</p>
-            <p class="insight-paragraph"><strong>Dispersion multi-canal :</strong> emails, courrier, amelipro, remise en main propre. Cette dispersion cr&eacute;e une cha&icirc;ne de d&eacute;faillances : pi&egrave;ces manquantes, relances, erreurs de saisie, anomalies DSN, IJSS non r&eacute;cup&eacute;r&eacute;es.</p>
-            <p class="insight-paragraph insight-belief">Depuis juillet 2025, le nouveau formulaire Cerfa s&eacute;curis&eacute; est obligatoire. Sans contr&ocirc;le de conformit&eacute; &agrave; la r&eacute;ception, les entreprises s'exposent &agrave; des rejets en cha&icirc;ne.</p>
-          </div>
-        </div>
-        <div class="insight-right">
-          <div class="insight-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Gestion des arr&ecirc;ts" class="insight-image">
-            <div class="insight-badges">
-              <span class="insight-badge"><span class="insight-badge-value">4,5%</span>absent&eacute;isme</span>
-              <span class="insight-badge"><span class="insight-badge-value">&euro;120Md+</span>/an</span>
-              <span class="insight-badge"><span class="insight-badge-value">25-30%</span>IJSS perdues</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 2: ALTERNATIVES CARDS ==================== -->
-    <section class="slide" data-slide="2">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Comment les organisations g&egrave;rent</span><br>
-        <span class="title-bold">leurs arr&ecirc;ts aujourd'hui</span>
-      </h2>
-
-      <div class="alternatives-grid">
-        <div class="alternative-card">
-          <div class="card-image-container">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop" alt="Gestion manuelle" class="card-image">
-          </div>
-          <h3 class="card-heading">Gestion manuelle multi-canal</h3>
-          <p class="card-text">
-            <strong>Emails, courrier, portails CPAM.</strong> Chaque arr&ecirc;t arrive diff&eacute;remment, trait&eacute; manuellement. Dispersion, relances et erreurs de saisie.
-          </p>
-        </div>
-
-        <div class="alternative-card">
-          <div class="card-image-container">
-            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=300&fit=crop" alt="Module SIRH" class="card-image">
-          </div>
-          <h3 class="card-heading">Module SIRH / GTA</h3>
-          <p class="card-text">
-            <strong>Lucca, PayFit, Eur&eacute;cia, Kelio.</strong> G&egrave;re l'absence mais pas le justificatif physique. Pas de contr&ocirc;le de conformit&eacute; documentaire.
-          </p>
-        </div>
-
-        <div class="alternative-card">
-          <div class="card-image-container">
-            <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=400&h=300&fit=crop" alt="Gestionnaire paie" class="card-image">
-          </div>
-          <h3 class="card-heading">Gestionnaire paie fait tout</h3>
-          <p class="card-text">
-            <strong>La paie collecte, v&eacute;rifie et saisit.</strong> En plus de son travail habituel. Surcharge pendant les cl&ocirc;tures, erreurs sous pression.
-          </p>
-        </div>
-      </div>
-
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 3: ALTERNATIVES TABLE ==================== -->
-    <section class="slide" data-slide="3">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Comparaison</span>
-        <span class="title-bold">des approches</span>
-      </h2>
-
-      <div class="table-container">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th class="col-approach">Approche</th>
-              <th class="col-pros">Avantages</th>
-              <th class="col-cons">Inconv&eacute;nients</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Manuel<br>multi-canal</td>
-              <td>
-                <ul>
-                  <li><span>Pas de co&ucirc;t externe</span></li>
-                  <li><span>Processus connu des &eacute;quipes</span></li>
-                  <li><span>Flexibilit&eacute; au cas par cas</span></li>
-                </ul>
-              </td>
-              <td>
-                <ul class="cons">
-                  <li><span>Dispersion = pertes d'information</span></li>
-                  <li><span>Aucun contr&ocirc;le de conformit&eacute; (Cerfa)</span></li>
-                  <li><span>Relances manuelles chronophages</span></li>
-                  <li><span>Erreurs de saisie et anomalies DSN</span></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Module<br>SIRH / GTA</td>
-              <td>
-                <ul>
-                  <li><span>Portail salari&eacute; int&eacute;gr&eacute;</span></li>
-                  <li><span>Int&eacute;gration avec la paie</span></li>
-                  <li><span>Centralisation des donn&eacute;es RH</span></li>
-                </ul>
-              </td>
-              <td>
-                <ul class="cons">
-                  <li><span>G&egrave;re l'absence, pas le justificatif</span></li>
-                  <li><span>Pas de contr&ocirc;le documentaire</span></li>
-                  <li><span>Pas de relances pour pi&egrave;ces manquantes</span></li>
-                  <li><span>Pas de d&eacute;tection d'anomalies</span></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Gestionnaire<br>paie fait tout</td>
-              <td>
-                <ul>
-                  <li><span>Connaissance des cas particuliers</span></li>
-                  <li><span>Saisie directe en paie</span></li>
-                  <li><span>Pas de changement &agrave; g&eacute;rer</span></li>
-                </ul>
-              </td>
-              <td>
-                <ul class="cons">
-                  <li><span>Surcharge pendant les cl&ocirc;tures</span></li>
-                  <li><span>Erreurs sous pression temporelle</span></li>
-                  <li><span>Relances informelles chronophages</span></li>
-                  <li><span>Pas de vision consolid&eacute;e</span></li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 4: MONDE IDEAL ==================== -->
-    <section class="slide" data-slide="4">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">La solution</span>
-        <span class="title-bold">id&eacute;ale</span>
-      </h2>
-
-      <div class="ideals-grid six-items">
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-              <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Point d'entr&eacute;e unique</h3>
-          <p class="ideal-description">Tous les arr&ecirc;ts convergent vers un seul flux, quel que soit le canal d'origine</p>
-        </div>
-
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <polyline points="9 12 11 14 15 10"></polyline>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Contr&ocirc;le de conformit&eacute;</h3>
-          <p class="ideal-description">Chaque arr&ecirc;t v&eacute;rifi&eacute; : compl&eacute;tude, nouveau Cerfa, coh&eacute;rence documentaire</p>
-        </div>
-
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Relances automatiques</h3>
-          <p class="ideal-description">Plus besoin de courir apr&egrave;s les pi&egrave;ces - le syst&egrave;me relance salari&eacute;s et r&eacute;f&eacute;rents</p>
-        </div>
-
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Donn&eacute;es paie-ready</h3>
-          <p class="ideal-description">Donn&eacute;es export&eacute;es dans le format requis, pr&ecirc;tes &agrave; int&eacute;grer sans ressaisie</p>
-        </div>
-
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Tra&ccedil;abilit&eacute; compl&egrave;te</h3>
-          <p class="ideal-description">Chaque arr&ecirc;t horodat&eacute;, class&eacute;, tra&ccedil;able - tra&ccedil;abilit&eacute; documentaire compl&egrave;te</p>
-        </div>
-
-        <div class="ideal-card">
-          <div class="ideal-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 class="ideal-heading">Visibilit&eacute; managers</h3>
-          <p class="ideal-description">Les managers inform&eacute;s des absences en temps r&eacute;el pour organiser les remplacements</p>
-        </div>
-      </div>
-
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 5: INTRODUCTION ==================== -->
-    <section class="slide slide-introduction" data-slide="5">
-      <div class="slide-inner">
-        <div class="intro-hero">
-          <div class="intro-hero-collage">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Collecte">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Relances">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Export">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Arr&ecirc;ts">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Collecte">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Relances">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Export">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Arr&ecirc;ts">
-          </div>
-
-          <div class="intro-hero-logo">
+          <div class="cover-logo">
             <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
           </div>
+          <h1 class="cover-title">
+            Collecte des<br>Arrêts de Travail
+          </h1>
+          <p class="cover-subtitle">Externalisation de la collecte, du contrôle et de la transmission de vos arrêts de travail</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1000&h=1200&fit=crop" alt="Équipe RH">
+        </div>
+      </div>
+    </section>
 
-          <div class="intro-title-band">
-            <h2 class="intro-offer-title">Collecte des Arr&ecirc;ts de Travail</h2>
-          </div>
+    <!-- SLIDE 1: INSIGHT -->
+    <section class="slide" data-chapter="insight">
+      <div class="layout-split">
+        <div class="content-side">
+          <h1 class="slide-title">
+            Arrêts de travail :<br>
+            quand la collecte devient le problème
+          </h1>
 
-          <div class="intro-stats">
-            <div class="intro-stat-card">
-              <div class="intro-stat-number">250 000+</div>
-              <div class="intro-stat-label">documents / an</div>
+          <p class="content-paragraph">
+            La plupart des organisations pensent que la gestion des arrêts de travail est un problème de paie. Mais c'est en réalité un problème de <strong>dispersion et de fiabilité des données</strong> qui impacte toute la chaîne RH.
+          </p>
+
+          <p class="content-paragraph">
+            Quand un collaborateur s'arrête, les justificatifs arrivent par tous les canaux - email personnel du manager, portail RH, courrier papier, SMS. Résultat : la paie court après l'information, les dossiers sont incomplets et les erreurs de saisie se multiplient.
+          </p>
+
+          <p class="content-paragraph highlight">
+            Chez Ayming, nous croyons que chaque arrêt doit être collecté, contrôlé et tracé dans un seul flux fiable. La paie doit traiter, pas relancer.
+          </p>
+        </div>
+
+        <div class="visual-side">
+          <div class="image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/export-arrets.jpg" alt="Collecte des arrêts de travail">
+            <div class="floating-badge top-right">
+              <span class="badge-number">25-30%</span> IJSS perdues
             </div>
-            <div class="intro-stat-card">
-              <div class="intro-stat-number">120 000</div>
-              <div class="intro-stat-label">salari&eacute;s</div>
-            </div>
-            <div class="intro-stat-card">
-              <div class="intro-stat-number">75%</div>
-              <div class="intro-stat-label">grands groupes</div>
-            </div>
-            <div class="intro-stat-card">
-              <div class="intro-stat-number">89%</div>
-              <div class="intro-stat-label">recommandation</div>
+            <div class="floating-badge bottom-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+              </svg>
+              Nouveau Cerfa 2025
             </div>
           </div>
-        </div>
-
-        <div class="intro-content">
-          <p class="intro-pitch">Ayming externalise la collecte de vos arr&ecirc;ts de travail : un point d'entr&eacute;e unique, un contr&ocirc;le de conformit&eacute; syst&eacute;matique, et des donn&eacute;es paie-ready.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SLIDE 6: VALEUR OVERVIEW ==================== -->
-    <section class="slide" data-slide="6">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Ce qu'Ayming</span>
-        <span class="title-bold">vous apporte</span>
-      </h2>
-
-      <div class="value-grid-3">
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-              <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-            </svg>
-          </div>
-          <div class="value-content">
-            <h3 class="value-title">Point d'entr&eacute;e unique pour tous les arr&ecirc;ts</h3>
-            <p class="value-description">Tous les arr&ecirc;ts convergent vers un seul flux, quelle que soit leur source</p>
-          </div>
-        </div>
-
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              <polyline points="9 12 11 14 15 10"></polyline>
-            </svg>
-          </div>
-          <div class="value-content">
-            <h3 class="value-title">Contr&ocirc;le de conformit&eacute; et relances automatiques</h3>
-            <p class="value-description">Dossiers complets et conformes, sans intervention de la paie pour relancer</p>
-          </div>
-        </div>
-
-        <div class="value-card">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
-          </div>
-          <div class="value-content">
-            <h3 class="value-title">Donn&eacute;es pr&ecirc;tes pour la paie sans ressaisie</h3>
-            <p class="value-description">Paie fiable, donn&eacute;es int&eacute;gr&eacute;es directement sans ressaisie</p>
-          </div>
-        </div>
-      </div>
-
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 7: VALUE DETAIL 1 ==================== -->
-    <section class="slide slide-value-detail" data-slide="7">
-      <div class="value-detail-split">
-        <div class="value-detail-left">
-          <h2 class="value-detail-title">Point d'entr&eacute;e unique pour tous les arr&ecirc;ts</h2>
-          <ul class="value-features">
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Collecte via plateforme web/mobile (Ayming Collect) ou vos canaux existants</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Saisie guid&eacute;e avec pi&egrave;ces jointes pour les salari&eacute;s</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>R&eacute;ception et contr&ocirc;le centralis&eacute;s quelle que soit l'origine</span>
-            </li>
-          </ul>
-        </div>
-        <div class="value-detail-right">
-          <div class="value-detail-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Point d'entr&eacute;e unique" class="value-detail-image">
-          </div>
-        </div>
-      </div>
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 8: VALUE DETAIL 2 ==================== -->
-    <section class="slide slide-value-detail" data-slide="8">
-      <div class="value-detail-split">
-        <div class="value-detail-left">
-          <h2 class="value-detail-title">Contr&ocirc;le de conformit&eacute; et relances automatiques</h2>
-          <ul class="value-features">
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Chaque dossier v&eacute;rifi&eacute; pour compl&eacute;tude et conformit&eacute; (nouveau Cerfa)</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Relances automatiques aux salari&eacute;s et r&eacute;f&eacute;rents pour pi&egrave;ces manquantes</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Retours exploitables pour la paie</span>
-            </li>
-          </ul>
-        </div>
-        <div class="value-detail-right">
-          <div class="value-detail-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Contr&ocirc;le et relances" class="value-detail-image">
-          </div>
-        </div>
-      </div>
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 9: VALUE DETAIL 3 ==================== -->
-    <section class="slide slide-value-detail" data-slide="9">
-      <div class="value-detail-split">
-        <div class="value-detail-left">
-          <h2 class="value-detail-title">Donn&eacute;es pr&ecirc;tes pour la paie sans ressaisie</h2>
-          <ul class="value-features">
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Espace documentaire centralis&eacute; avec justificatifs class&eacute;s, horodat&eacute;s et tra&ccedil;ables</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Base de r&eacute;f&eacute;rence actualis&eacute;e et accessible</span>
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-              <span>Arr&ecirc;ts v&eacute;rifi&eacute;s export&eacute;s &agrave; la demande dans le format requis</span>
-            </li>
-          </ul>
-        </div>
-        <div class="value-detail-right">
-          <div class="value-detail-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Donn&eacute;es paie-ready" class="value-detail-image">
-          </div>
-        </div>
-      </div>
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
-    </section>
-
-    <!-- ==================== SLIDE 10: OPTIONS ==================== -->
-    <section class="slide" data-slide="10" style="background: var(--bg-light);">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Options pour aller</span><br>
-        <span class="title-bold">plus loin</span>
-      </h2>
-
-      <div class="options-grid">
-        <div class="option-card">
-          <div class="card-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Ayming-alert.jpg" alt="Ayming Alert" class="card-image">
-          </div>
-          <h3>Anticipez les arr&ecirc;ts longs</h3>
-          <p>Notifications temps r&eacute;el pour managers, RH et dirigeants. Anticipez les arr&ecirc;ts longs et organisez les remplacements plus t&ocirc;t.</p>
-        </div>
-
-        <div class="option-card">
-          <div class="card-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/authenticite.jpg" alt="Contr&ocirc;le coh&eacute;rence" class="card-image">
-          </div>
-          <h3>D&eacute;tectez les anomalies</h3>
-          <p>V&eacute;rification de coh&eacute;rence des arr&ecirc;ts par indicateurs crois&eacute;s pour d&eacute;tecter anomalies et limiter les d&eacute;rives.</p>
-        </div>
-
-        <div class="option-card">
-          <div class="card-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Data-transfer.jpg" alt="Automatisation paie" class="card-image">
-          </div>
-          <h3>Automatisez la saisie paie</h3>
-          <p>Import direct des arr&ecirc;ts v&eacute;rifi&eacute;s dans votre SIRH ou outil de paie. Application de vos r&egrave;gles de saisie.</p>
-        </div>
-
-        <div class="option-card">
-          <div class="card-image-container">
-            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/naissance.jpg" alt="Justificatifs unifi&eacute;s" class="card-image">
-          </div>
-          <h3>Unifiez tous vos justificatifs</h3>
-          <p>Enregistrement des absences hors IJSS (mariage, naissance, d&eacute;c&egrave;s, aidant). Centralisation de tous les justificatifs.</p>
         </div>
       </div>
 
@@ -1444,69 +1866,494 @@
       </div>
     </section>
 
-    <!-- ==================== SLIDE 11: PREUVES ==================== -->
-    <section class="slide slide-preuves" data-slide="11">
+    <!-- SLIDE 2: ALTERNATIVES - Cards -->
+    <section class="slide" data-chapter="alternatives">
       <div class="slide-inner">
         <h1 class="slide-title">
-          <span class="title-light">La confiance de</span>
-          <span class="title-bold">75% des grands groupes</span>
+          Comment les organisations gèrent<br>
+          leurs arrêts aujourd'hui
         </h1>
 
+        <div class="three-columns">
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" alt="Gestion manuelle">
+            </div>
+            <h3>Gestion manuelle multi-canal</h3>
+            <p><strong>Dispersé et incontrôlable.</strong> Chaque arrêt arrive par un canal différent, traité manuellement. Aucun contrôle de conformité.</p>
+          </div>
+
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Module SIRH">
+            </div>
+            <h3>Module SIRH / GTA</h3>
+            <p><strong>Intégré mais incomplet.</strong> Le SIRH gère l'absence, pas le justificatif. Pas de contrôle documentaire ni de relances.</p>
+          </div>
+
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Gestionnaire paie">
+            </div>
+            <h3>Gestionnaire paie fait tout</h3>
+            <p><strong>Surchargé et fragile.</strong> La paie collecte, vérifie et saisit en plus de son travail. Erreurs sous pression, aucune vision consolidée.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 3: ALTERNATIVES - Table -->
+    <section class="slide" data-chapter="comparison">
+      <div class="slide-inner">
+        <h1 class="slide-title">
+          Chaque approche a ses limites
+        </h1>
+
+        <div class="table-container">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Approche</th>
+                <th>Avantages</th>
+                <th>Inconvénients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gestion manuelle</td>
+                <td>
+                  <ul>
+                    <li>Pas de coût externe</li>
+                    <li>Processus connu des équipes</li>
+                    <li>Flexibilité au cas par cas</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Dispersion = pertes d'information</li>
+                    <li>Aucun contrôle de conformité</li>
+                    <li>Relances manuelles chronophages</li>
+                    <li>Erreurs de saisie et anomalies DSN</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Module SIRH / GTA</td>
+                <td>
+                  <ul>
+                    <li>Portail salarié intégré</li>
+                    <li>Intégration avec la paie</li>
+                    <li>Centralisation des données RH</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Gère l'absence, pas le justificatif</li>
+                    <li>Pas de contrôle documentaire</li>
+                    <li>Pas de relances pour pièces manquantes</li>
+                    <li>Pas de détection d'anomalies</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Gestionnaire paie</td>
+                <td>
+                  <ul>
+                    <li>Connaissance des cas particuliers</li>
+                    <li>Saisie directe en paie</li>
+                    <li>Pas de changement à gérer</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Surcharge pendant les clôtures</li>
+                    <li>Erreurs sous pression temporelle</li>
+                    <li>Relances informelles et chronophages</li>
+                    <li>Pas de vision consolidée</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 4: MONDE IDÉAL (4 items, single row) -->
+    <section class="slide" data-chapter="ideal">
+      <div class="slide-inner">
+        <h1 class="slide-title">
+          La solution idéale pour<br>
+          la collecte des arrêts
+        </h1>
+
+        <div class="four-columns">
+          <div class="column-card ideal-card">
+            <div class="card-image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 6v6l4 2"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <h3>Point d'entrée unique</h3>
+            <p>Tous les arrêts convergent vers un seul flux, quel que soit le canal d'origine</p>
+          </div>
+
+          <div class="column-card ideal-card">
+            <div class="card-image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3>Contrôle automatique de conformité</h3>
+            <p>Chaque arrêt vérifié : complétude, nouveau Cerfa, cohérence documentaire</p>
+          </div>
+
+          <div class="column-card ideal-card">
+            <div class="card-image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6.002 6.002 0 0 0-4-5.659V5a2 2 0 1 0-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9"/>
+              </svg>
+            </div>
+            <h3>Relances automatiques</h3>
+            <p>Plus besoin de courir après les pièces - le système relance salariés et référents</p>
+          </div>
+
+          <div class="column-card ideal-card">
+            <div class="card-image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2"/>
+                <path d="M9 14l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Données fiabilisées et traçables</h3>
+            <p>Chaque arrêt vérifié, corrigé et restitué dans un format compatible paie, avec traçabilité complète</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 5: INTRODUCTION (Hero Carousel) -->
+    <section class="slide slide-introduction" data-chapter="introduction">
+      <div class="slide-inner">
+        <div class="intro-hero">
+          <div class="intro-hero-collage">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Collecte">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Relances">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Export">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Collecte">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Relances">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Export">
+          </div>
+
+          <div class="intro-hero-logo">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+          </div>
+
+          <div class="intro-title-band">
+            <h1 class="intro-offer-title">Collecte des Arrêts de Travail</h1>
+          </div>
+
+          <div class="intro-stats">
+            <div class="intro-stat-card">
+              <div class="intro-stat-number">250 000+</div>
+              <div class="intro-stat-label">Documents collectés / an</div>
+            </div>
+            <div class="intro-stat-card">
+              <div class="intro-stat-number">120 000</div>
+              <div class="intro-stat-label">Salariés en gestion</div>
+            </div>
+            <div class="intro-stat-card">
+              <div class="intro-stat-number">75%</div>
+              <div class="intro-stat-label">Grands groupes français</div>
+            </div>
+            <div class="intro-stat-card">
+              <div class="intro-stat-number">89%</div>
+              <div class="intro-stat-label">Recommandation client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-content">
+          <p class="intro-pitch">Nous proposons un service d'externalisation de la gestion des arrêts de travail via Ayming Collect, une solution digitale qui centralise, vérifie et fiabilise vos données d'absence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: VALEUR OVERVIEW (3 Attributs Uniques) -->
+    <section class="slide" data-chapter="value">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce qu'Ayming vous apporte</h1>
+
+        <div class="feature-grid-3">
+          <!-- Attribut 1: Point d'entrée unique -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 6v6l4 2"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4>Point d'entrée unique pour tous les arrêts</h4>
+              <p>Tous les arrêts convergent vers un seul flux, quelle que soit leur source</p>
+            </div>
+          </div>
+
+          <!-- Attribut 2: Contrôle conformité + relances -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4>Contrôle de conformité et relances automatiques</h4>
+              <p>Dossiers complets et conformes, sans intervention de la paie pour relancer</p>
+            </div>
+          </div>
+
+          <!-- Attribut 3: Données paie-ready -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z"/>
+                <path d="M9 2v3m6-3v3M4 9.5h16"/>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4>Données fiabilisées et prêtes à intégrer</h4>
+              <p>Données d'absence fiables, vérifiées et dans un format prêt à intégrer en paie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 7: VALUE DETAIL 1 - Point d'entrée unique -->
+    <section class="slide" data-chapter="value">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Point d'entrée unique pour tous les arrêts</h2>
+          <ul class="value-detail-list">
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Collecte via plateforme web/mobile (Ayming Collect) ou vos canaux existants
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Saisie guidée avec pièces jointes pour les salariés
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Réception et contrôle centralisés quelle que soit l'origine
+            </li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/collecter.jpg" alt="Collecte centralisée">
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 8: VALUE DETAIL 2 - Contrôle conformité + relances -->
+    <section class="slide" data-chapter="value">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Contrôle de conformité et relances automatiques</h2>
+          <ul class="value-detail-list">
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Chaque dossier vérifié pour complétude et conformité (nouveau Cerfa)
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Relances automatiques aux salariés et référents pour pièces manquantes
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Retours exploitables pour la paie
+            </li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/relances.jpg" alt="Relances automatiques">
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 9: VALUE DETAIL 3 - Données fiabilisées -->
+    <section class="slide" data-chapter="value">
+      <div class="value-detail-layout">
+        <div class="value-detail-content">
+          <h2>Données fiabilisées et prêtes à intégrer</h2>
+          <ul class="value-detail-list">
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Espace documentaire centralisé avec justificatifs classés, horodatés et traçables
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Chaque arrêt vérifié, corrigé si nécessaire, et restitué dans un format compatible paie
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              Traçabilité complète pour conformité DSN et récupération IJSS subrogées
+            </li>
+          </ul>
+        </div>
+        <div class="value-detail-visual">
+          <div class="value-image-container">
+            <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/exporting-at.jpg" alt="Export paie">
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 10: OPTIONS / ADD-ONS -->
+    <section class="slide" data-chapter="options" style="background: var(--bg-light);">
+      <div class="slide-inner">
+        <h1 class="slide-title">
+          Options pour aller<br>
+          plus loin
+        </h1>
+
+        <div class="four-columns">
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Ayming-alert.jpg" alt="Ayming Alert">
+            </div>
+            <h3>Ayming Alert</h3>
+            <p>Anticipez les absences prolongées. Des notifications automatiques informent vos managers, équipes RH et responsables en temps réel. Vous anticipez les arrêts longs et organisez plus tôt les remplacements ou les reprises.</p>
+          </div>
+
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/authenticite.jpg" alt="Contrôle de la cohérence">
+            </div>
+            <h3>Contrôle de la cohérence</h3>
+            <p>Ce module vérifie la cohérence des arrêts via plusieurs indicateurs pour repérer les anomalies. Vous limitez les coûts liés aux arrêts abusifs et fiabilisez vos données.</p>
+          </div>
+
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Data-transfer.jpg" alt="Saisie en paie automatisée">
+            </div>
+            <h3>Automatisation de la saisie en paie</h3>
+            <p>Les arrêts vérifiés peuvent être importés directement dans votre SIRH ou votre outil de paie. Nous appliquons vos règles de saisie pour vous éviter toute ressaisie manuelle.</p>
+          </div>
+
+          <div class="column-card">
+            <div class="card-image">
+              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/naissance.jpg" alt="Justificatifs unifiés">
+            </div>
+            <h3>Unification des justificatifs d'absence</h3>
+            <p>Avec cette option, nous enregistrons également les absences hors IJSS (mariage, naissance, adoption, décès, congé d'aidant, congés parentaux). Vous centralisez tous les justificatifs dans un même flux traçable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
+    </section>
+
+    <!-- SLIDE 11: PREUVES (2 testimonials, flip cards) -->
+    <section class="slide" data-chapter="proof">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ils nous font confiance</h1>
+
         <div class="testimonial-grid count-2">
-          <!-- Card 1: STEF -->
+          <!-- STEF -->
           <div class="testimonial-card">
             <div class="testimonial-card-inner">
               <div class="testimonial-front">
                 <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/05/STEF-532-x-532.jpg" alt="STEF">
-                <div class="testimonial-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/STEF_logo.png" alt="STEF"></div>
-                <p class="testimonial-title">STEF am&eacute;liore son pilotage des arr&ecirc;ts de travail</p>
-                <span class="testimonial-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                  D&eacute;couvrir
-                </span>
+                <div class="testimonial-logo">
+                  <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/STEF_logo.png" alt="STEF Logo">
+                </div>
+                <h3 class="testimonial-title">STEF améliore son pilotage des arrêts de travail</h3>
+                <div class="testimonial-hint">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg>
+                  Découvrir
+                </div>
               </div>
               <div class="testimonial-back">
                 <div class="testimonial-stars">
                   <span class="testimonial-stars-icons">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                  <span class="testimonial-date">2025</span>
+                  <span class="testimonial-date">Janvier 2024</span>
                 </div>
                 <div class="testimonial-quote-section">
-                  <p class="testimonial-quote">La centralisation de la collecte nous a permis de fiabiliser notre suivi et de r&eacute;duire les d&eacute;lais de traitement.</p>
-                  <a href="https://www.ayming.fr/temoignages-clients/stef-ameliore-pilotage-arret-travail-et-risques-professionnels/" target="_blank" class="testimonial-cta">Lire la suite</a>
+                  <p class="testimonial-quote">La relation avec Ayming est structurée et efficace. Nous pouvons ajuster notre stratégie en permanence et maximiser les résultats.</p>
+                  <a class="testimonial-cta" href="https://www.ayming.fr/temoignages-clients/stef-ameliore-pilotage-arret-travail-et-risques-professionnels/?utm_source=slides-sales&utm_medium=print&utm_campaign=collecte-arrets" target="_blank">Lire la suite</a>
                 </div>
                 <div class="testimonial-author">
-                  <span class="testimonial-name">Direction des Ressources Humaines</span>
-                  <span class="testimonial-position">STEF</span>
+                  <span class="testimonial-name">Benoit Havez</span>
+                  <span class="testimonial-position">DRH, STEF GMS</span>
                   <img class="testimonial-company-logo" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/STEF_logo.png" alt="STEF">
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: Guerbet -->
+          <!-- Guerbet -->
           <div class="testimonial-card">
             <div class="testimonial-card-inner">
               <div class="testimonial-front">
-                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/Design-sans-titre-9-1324x662.jpg" alt="Guerbet">
-                <div class="testimonial-logo"><img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/Logo_Guerbet_DEF.png" alt="Guerbet"></div>
-                <p class="testimonial-title">Guerbet repense sa gestion de l'absence</p>
-                <span class="testimonial-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                  D&eacute;couvrir
-                </span>
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/Design-sans-titre-9-532x532.jpg" alt="Guerbet">
+                <div class="testimonial-logo">
+                  <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/Logo_Guerbet_DEF.png" alt="Guerbet Logo">
+                </div>
+                <h3 class="testimonial-title">Guerbet repense son processus de gestion de l'absence</h3>
+                <div class="testimonial-hint">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg>
+                  Découvrir
+                </div>
               </div>
               <div class="testimonial-back">
                 <div class="testimonial-stars">
                   <span class="testimonial-stars-icons">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                  <span class="testimonial-date">2025</span>
+                  <span class="testimonial-date">Février 2025</span>
                 </div>
                 <div class="testimonial-quote-section">
-                  <p class="testimonial-quote">Ayming nous a accompagn&eacute;s dans la refonte de notre processus de gestion des absences, avec des r&eacute;sultats concrets.</p>
-                  <a href="https://www.ayming.fr/temoignages-clients/guerbet-repense-son-processus-de-gestion-de-labsence/" target="_blank" class="testimonial-cta">Lire la suite</a>
+                  <p class="testimonial-quote">J'ai l'impression que notre équipe s'est agrandie, je n'ai pas l'impression d'avoir fait appel à un prestataire.</p>
+                  <a class="testimonial-cta" href="https://www.ayming.fr/temoignages-clients/guerbet-repense-son-processus-de-gestion-de-labsence/?utm_source=slides-sales&utm_medium=print&utm_campaign=collecte-arrets" target="_blank">Lire la suite</a>
                 </div>
                 <div class="testimonial-author">
-                  <span class="testimonial-name">Direction des Ressources Humaines</span>
-                  <span class="testimonial-position">Guerbet</span>
+                  <span class="testimonial-name">Charlotte Dubois</span>
+                  <span class="testimonial-position">Responsable CSRH, Guerbet</span>
                   <img class="testimonial-company-logo" src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/08/Logo_Guerbet_DEF.png" alt="Guerbet">
                 </div>
               </div>
@@ -1520,157 +2367,163 @@
       </div>
     </section>
 
-    <!-- ==================== SLIDE 12: QUESTIONS ==================== -->
-    <section class="slide" data-slide="12">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Questions</span>
-        <span class="title-bold">qu'on nous pose</span>
-      </h2>
+    <!-- SLIDE 12: QUESTIONS (4 FAQ cards) -->
+    <section class="slide" data-chapter="questions">
+      <div class="slide-inner">
+        <h1 class="slide-title">Questions qu'on nous pose</h1>
 
-      <div class="faq-grid">
-        <div class="faq-card">
-          <div class="faq-header">
-            <span class="faq-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            </span>
-            <h3 class="faq-question">Notre offre n&eacute;cessite-t-elle un SIRH sp&eacute;cifique ?</h3>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Notre offre nécessite-t-elle un SIRH spécifique ?
+            </h4>
+            <p>Non. Nous nous adaptons à votre environnement (multi-sites, multi-outils) et organisons les flux pour une collecte homogène.</p>
           </div>
-          <p class="faq-answer">Non. Nous nous adaptons &agrave; votre environnement (multi-sites, multi-outils) et organisons les flux pour une collecte homog&egrave;ne.</p>
-        </div>
 
-        <div class="faq-card">
-          <div class="faq-header">
-            <span class="faq-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            </span>
-            <h3 class="faq-question">Que re&ccedil;oit la paie concr&egrave;tement ?</h3>
+          <div class="faq-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              Que reçoit la paie concrètement ?
+            </h4>
+            <p>Un dossier complet et tracé (documents, informations clés, contrôles effectués) et des données prêtes à intégrer pour la paie et la DSN.</p>
           </div>
-          <p class="faq-answer">Un dossier complet et trac&eacute; (documents, informations cl&eacute;s, contr&ocirc;les effectu&eacute;s) et des donn&eacute;es pr&ecirc;tes &agrave; int&eacute;grer pour la paie et la DSN.</p>
-        </div>
 
-        <div class="faq-card">
-          <div class="faq-header">
-            <span class="faq-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            </span>
-            <h3 class="faq-question">Ayming Collect est-il obligatoire ?</h3>
+          <div class="faq-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+              </svg>
+              Ayming Collect est-il obligatoire ?
+            </h4>
+            <p>Non. Même si Ayming Collect est l'une des meilleures solutions de collecte, nos équipes travaillent avec vos systèmes existants.</p>
           </div>
-          <p class="faq-answer">Non. M&ecirc;me si Ayming Collect est l'une des meilleures solutions de collecte, nos &eacute;quipes travaillent avec vos syst&egrave;mes existants.</p>
-        </div>
 
-        <div class="faq-card">
-          <div class="faq-header">
-            <span class="faq-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            </span>
-            <h3 class="faq-question">Comment sont g&eacute;r&eacute;es les IJSS et la pr&eacute;voyance ensuite ?</h3>
+          <div class="faq-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="17 1 21 5 17 9"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <polyline points="7 23 3 19 7 15"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+              </svg>
+              Comment sont gérées les IJSS et la prévoyance ensuite ?
+            </h4>
+            <p>Notre offre IJSS et prévoyance prend le relais : dépôt des demandes, traitement des retours, corrections et relances CPAM/organismes.</p>
           </div>
-          <p class="faq-answer">Notre offre IJSS et pr&eacute;voyance prend le relais : d&eacute;p&ocirc;t des demandes, traitement des retours, corrections et relances CPAM/organismes.</p>
         </div>
       </div>
 
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
     </section>
 
-    <!-- ==================== SLIDE 13: PROCESSUS ==================== -->
-    <section class="slide" data-slide="13">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Prochaine</span>
-        <span class="title-bold">&eacute;tape</span>
-      </h2>
+    <!-- SLIDE 13: PROCESSUS (4 steps, span arrows) -->
+    <section class="slide" data-chapter="process">
+      <div class="slide-inner">
+        <h1 class="slide-title">Prochaine étape</h1>
 
-      <div class="timeline">
-        <div class="timeline-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3 class="step-name">Diagnostic gratuit</h3>
+        <div class="process-timeline-4">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Diagnostic gratuit</h3>
             <p class="step-duration">2 semaines</p>
-            <p class="step-description">Analyse de votre processus actuel de collecte des arr&ecirc;ts, identification des pertes IJSS</p>
+            <p class="step-description">Analyse de votre processus actuel de collecte des arrêts, identification des pertes IJSS</p>
           </div>
-        </div>
 
-        <div class="timeline-arrow">&rarr;</div>
+          <span class="step-arrow">&rarr;</span>
 
-        <div class="timeline-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3 class="step-name">Proposition sur-mesure</h3>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Proposition sur-mesure</h3>
             <p class="step-duration">+1 semaine</p>
-            <p class="step-description">Mod&egrave;le d'externalisation adapt&eacute; &agrave; votre environnement (canaux, outils, volumes)</p>
+            <p class="step-description">Modèle d'externalisation adapté à votre environnement (canaux, outils, volumes)</p>
           </div>
-        </div>
 
-        <div class="timeline-arrow">&rarr;</div>
+          <span class="step-arrow">&rarr;</span>
 
-        <div class="timeline-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3 class="step-name">Pilote</h3>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Pilote</h3>
             <p class="step-duration">3 mois</p>
-            <p class="step-description">D&eacute;marrage avec un p&eacute;rim&egrave;tre restreint pour d&eacute;montrer la valeur</p>
+            <p class="step-description">Démarrage avec un périmètre restreint pour démontrer la valeur</p>
           </div>
-        </div>
 
-        <div class="timeline-arrow">&rarr;</div>
+          <span class="step-arrow">&rarr;</span>
 
-        <div class="timeline-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3 class="step-name">D&eacute;ploiement complet</h3>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Déploiement complet</h3>
             <p class="step-duration">Selon planning</p>
-            <p class="step-description">Extension &agrave; l'ensemble de vos sites et populations</p>
+            <p class="step-description">Extension à l'ensemble de vos sites et populations</p>
           </div>
         </div>
       </div>
 
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
+      </div>
     </section>
 
-    <!-- ==================== SLIDE 14: DEMARRAGE ==================== -->
-    <section class="slide" data-slide="14">
-      <h2 class="two-tone-title centered">
-        <span class="title-light">Ce dont nous</span>
-        <span class="title-bold">avons besoin</span>
-      </h2>
+    <!-- SLIDE 14: DÉMARRAGE (Requirements + CTA) -->
+    <section class="slide" data-chapter="start">
+      <div class="slide-inner">
+        <h1 class="slide-title">Ce dont nous avons besoin</h1>
 
-      <div class="demarrage-box">
-        <h3 class="demarrage-section-title">Pour d&eacute;marrer le diagnostic</h3>
+        <div class="requirements-box">
+          <h4>Pour démarrer le diagnostic</h4>
+          <ul>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Données de paie des 12 derniers mois (volumes d'arrêts, canaux actuels)
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Entretien avec équipe paie (1-2 heures)
+            </li>
+            <li>
+              <span class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Accès à un échantillon de dossiers d'arrêts récents
+            </li>
+          </ul>
+        </div>
 
-        <ul class="requirements-list">
-          <li>
-            <span class="req-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </span>
-            <span>Donn&eacute;es de paie des 12 derniers mois (volumes d'arr&ecirc;ts, canaux actuels)</span>
-          </li>
-          <li>
-            <span class="req-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </span>
-            <span>Entretien avec &eacute;quipe paie (1-2 heures)</span>
-          </li>
-          <li>
-            <span class="req-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </span>
-            <span>Acc&egrave;s &agrave; un &eacute;chantillon de dossiers d'arr&ecirc;ts r&eacute;cents</span>
-          </li>
-        </ul>
+        <div class="cta-box">
+          <p class="cta-text">Diagnostic gratuit sans engagement - Quand pouvons-nous planifier ?</p>
+        </div>
       </div>
 
-      <div class="cta-box">
-        <p class="cta-text">Diagnostic gratuit sans engagement - Quand pouvons-nous planifier ?</p>
+      <div class="company-logo">
+        <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming">
       </div>
-
-      <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/07/Ayming.png" alt="Ayming" class="slide-logo">
     </section>
+
+    <!-- ========== END SLIDES ========== -->
 
   </main>
 
-  <!-- Keyboard Hint -->
+  <!-- Keyboard Hint (clickable) -->
   <div class="keyboard-hint">
     <span><span class="key" id="key-prev">&larr;</span><span class="key" id="key-next">&rarr;</span> Naviguer</span>
-    <span><span class="key" id="key-fullscreen">F</span> Plein &eacute;cran</span>
+    <span><span class="key" id="key-fullscreen">F</span> Plein écran</span>
   </div>
 
   <script>
@@ -1680,21 +2533,24 @@
     const counter = document.querySelector('.slide-counter');
     const totalSlides = slides.length;
 
-    // Value detail slides map to "Valeur" nav item
     const valueDetailStartIndex = 7;
     const valueDetailCount = 3;
 
     function updateSlide() {
       slides.forEach((slide, index) => {
         slide.classList.remove('active');
-        if (index === currentSlide) slide.classList.add('active');
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        }
       });
 
       navItems.forEach((item) => {
         item.classList.remove('active');
         const navSlideIndex = parseInt(item.dataset.slide);
+
         const isValueDetailSlide = currentSlide >= valueDetailStartIndex &&
                                    currentSlide < valueDetailStartIndex + valueDetailCount;
+
         if (navSlideIndex === currentSlide ||
             (isValueDetailSlide && navSlideIndex === 6)) {
           item.classList.add('active');
@@ -1705,30 +2561,53 @@
     }
 
     function nextSlide() {
-      if (currentSlide < totalSlides - 1) { currentSlide++; updateSlide(); }
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
     }
 
     function prevSlide() {
-      if (currentSlide > 0) { currentSlide--; updateSlide(); }
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
     }
 
     function goToSlide(index) {
-      if (index >= 0 && index < totalSlides) { currentSlide = index; updateSlide(); }
+      if (index >= 0 && index < totalSlides) {
+        currentSlide = index;
+        updateSlide();
+      }
     }
 
     document.addEventListener('keydown', (e) => {
       switch(e.key) {
-        case 'ArrowRight': case ' ': e.preventDefault(); nextSlide(); break;
-        case 'ArrowLeft': prevSlide(); break;
-        case 'f': case 'F': toggleFullscreen(); break;
-        case 'Home': goToSlide(0); break;
-        case 'End': goToSlide(totalSlides - 1); break;
+        case 'ArrowRight':
+        case ' ':
+          e.preventDefault();
+          nextSlide();
+          break;
+        case 'ArrowLeft':
+          prevSlide();
+          break;
+        case 'f':
+        case 'F':
+          toggleFullscreen();
+          break;
+        case 'Home':
+          goToSlide(0);
+          break;
+        case 'End':
+          goToSlide(totalSlides - 1);
+          break;
       }
     });
 
     navItems.forEach((item) => {
       item.addEventListener('click', () => {
-        goToSlide(parseInt(item.dataset.slide));
+        const navIndex = parseInt(item.dataset.slide);
+        goToSlide(navIndex);
       });
     });
 
@@ -1753,11 +2632,74 @@
 
     document.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+      handleSwipe();
     });
 
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }
+
     updateSlide();
+
+    // ===== NUMBER COUNTER ANIMATION =====
+    const introductionSlideIndex = 5;
+    let countersAnimated = false;
+
+    function animateCounters() {
+      const statNumbers = document.querySelectorAll('.slide-introduction.active .intro-stat-number');
+      statNumbers.forEach(el => {
+        const text = el.textContent;
+        const match = text.match(/(\d[\d\s]*)/);
+        if (match) {
+          const target = parseInt(match[1].replace(/\s/g, ''));
+          const suffix = text.replace(match[1], '');
+          animateCounter(el, target, suffix);
+        }
+      });
+    }
+
+    function animateCounter(element, target, suffix, duration = 800) {
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.floor(target * progress);
+        element.textContent = current.toLocaleString('fr-FR') + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    function checkCounterAnimation() {
+      if (currentSlide === introductionSlideIndex && !countersAnimated) {
+        setTimeout(() => {
+          animateCounters();
+          countersAnimated = true;
+        }, 600);
+      }
+      if (currentSlide !== introductionSlideIndex) {
+        countersAnimated = false;
+      }
+    }
+
+    const originalUpdateSlide = updateSlide;
+    updateSlide = function() {
+      originalUpdateSlide();
+      checkCounterAnimation();
+    };
   </script>
 
 </body>
