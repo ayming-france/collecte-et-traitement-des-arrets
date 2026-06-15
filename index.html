@@ -519,37 +519,58 @@
           plus loin
         </h1>
 
-        <div class="four-columns">
-          <div class="column-card">
-            <div class="card-image">
-              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Ayming-alert.jpg" alt="Ayming Alert">
+        <style>
+          .option-card { text-decoration: none; color: inherit; flex: 1; max-width: 250px; border-radius: 16px; }
+          .option-card.static .column-card { cursor: default; }
+          .option-card .card-image { position: relative; overflow: hidden; border-radius: 12px; }
+          .option-card .card-image img { transition: transform 0.4s ease; }
+          .option-card:hover .card-image img { transform: scale(1.03); }
+          .option-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; background: linear-gradient(135deg, #003d79, #0ab38c); color: #fff; }
+        </style>
+
+        <div style="display: flex; justify-content: center; gap: 22px; width: 100%; max-width: 1180px;">
+          <div class="option-card static">
+            <div class="column-card">
+              <div class="card-image">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Ayming-alert.jpg" alt="Ayming Alert">
+              </div>
+              <span class="option-badge">En option</span>
+              <h3>Ayming Alert</h3>
+              <p>Anticipez les absences prolongées. Des notifications automatiques informent vos managers, équipes RH et responsables en temps réel. Vous anticipez les arrêts longs et organisez plus tôt les remplacements ou les reprises.</p>
             </div>
-            <h3>Ayming Alert</h3>
-            <p>Anticipez les absences prolongées. Des notifications automatiques informent vos managers, équipes RH et responsables en temps réel. Vous anticipez les arrêts longs et organisez plus tôt les remplacements ou les reprises.</p>
           </div>
 
-          <div class="column-card">
-            <div class="card-image">
-              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/authenticite.jpg" alt="Contrôle de la cohérence">
+          <div class="option-card static">
+            <div class="column-card">
+              <div class="card-image">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/authenticite.jpg" alt="Contrôle de la cohérence">
+              </div>
+              <span class="option-badge">En option</span>
+              <h3>Contrôle de la cohérence</h3>
+              <p>Ce module vérifie la cohérence des arrêts via plusieurs indicateurs pour repérer les anomalies. Vous limitez les coûts liés aux arrêts abusifs et fiabilisez vos données.</p>
             </div>
-            <h3>Contrôle de la cohérence</h3>
-            <p>Ce module vérifie la cohérence des arrêts via plusieurs indicateurs pour repérer les anomalies. Vous limitez les coûts liés aux arrêts abusifs et fiabilisez vos données.</p>
           </div>
 
-          <div class="column-card">
-            <div class="card-image">
-              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Data-transfer.jpg" alt="Saisie en paie automatisée">
+          <div class="option-card static">
+            <div class="column-card">
+              <div class="card-image">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/Data-transfer.jpg" alt="Saisie en paie automatisée">
+              </div>
+              <span class="option-badge">En option</span>
+              <h3>Automatisation de la saisie en paie</h3>
+              <p>Les arrêts vérifiés peuvent être importés directement dans votre SIRH ou votre outil de paie. Nous appliquons vos règles de saisie pour vous éviter toute ressaisie manuelle.</p>
             </div>
-            <h3>Automatisation de la saisie en paie</h3>
-            <p>Les arrêts vérifiés peuvent être importés directement dans votre SIRH ou votre outil de paie. Nous appliquons vos règles de saisie pour vous éviter toute ressaisie manuelle.</p>
           </div>
 
-          <div class="column-card">
-            <div class="card-image">
-              <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/naissance.jpg" alt="Justificatifs unifiés">
+          <div class="option-card static">
+            <div class="column-card">
+              <div class="card-image">
+                <img src="https://www.ayming.fr/wp-content/uploads/sites/3/2025/10/naissance.jpg" alt="Justificatifs unifiés">
+              </div>
+              <span class="option-badge">En option</span>
+              <h3>Unification des justificatifs d'absence</h3>
+              <p>Avec cette option, nous enregistrons également les absences hors IJSS (mariage, naissance, adoption, décès, congé d'aidant, congés parentaux). Vous centralisez tous les justificatifs dans un même flux traçable.</p>
             </div>
-            <h3>Unification des justificatifs d'absence</h3>
-            <p>Avec cette option, nous enregistrons également les absences hors IJSS (mariage, naissance, adoption, décès, congé d'aidant, congés parentaux). Vous centralisez tous les justificatifs dans un même flux traçable.</p>
           </div>
         </div>
       </div>
