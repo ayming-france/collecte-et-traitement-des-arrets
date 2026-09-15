@@ -517,7 +517,7 @@
     </section>
 
     <!-- SLIDE 10: OPTIONS / ADD-ONS -->
-    <section class="slide" data-chapter="options" style="background: var(--bg-light);">
+    <section class="slide options-slide" data-chapter="options">
       <div class="slide-inner">
         <h1 class="slide-title">
           Options pour aller<br>
@@ -531,9 +531,12 @@
           .option-card .card-image img { transition: transform 0.4s ease; }
           .option-card:hover .card-image img { transform: scale(1.03); }
           .option-badge { display: inline-block; padding: var(--space-4) var(--space-14); border-radius: var(--radius-2xl); font-size: var(--font-11); font-weight: var(--weight-bold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: var(--space-8); background: linear-gradient(135deg, var(--blue-dark), var(--gradient-green-end)); color: #fff; }
+          .options-slide { background: var(--bg-light); }
+          .options-row { display: flex; justify-content: center; gap: var(--space-22); width: 100%; max-width: 1180px; }
+          .ancrage-title { text-align: left; margin-bottom: var(--space-28); }
         </style>
 
-        <div style="display: flex; justify-content: center; gap: 22px; width: 100%; max-width: 1180px;">
+        <div class="options-row">
           <div class="option-card static">
             <div class="column-card">
               <div class="card-image">
@@ -593,7 +596,7 @@
         <style>
           .testimonial-card .testimonial-front img { filter: brightness(0.8) saturate(0.85); transition: filter 0.4s ease; }
           .testimonial-card:hover .testimonial-front img { filter: brightness(0.65) saturate(0.8); }
-            .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(15,167,226,0.10), rgba(10,179,140,0.10)); border: 1px solid rgba(17,169,230,0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
+            .next-step { margin-top: var(--space-34); padding: var(--space-18) var(--space-26); border-radius: var(--radius-14); background: linear-gradient(90deg, rgba(var(--blue-primary-rgb), 0.10), rgba(var(--gradient-green-end-rgb), 0.10)); border: 1px solid rgba(var(--blue-primary-rgb), 0.35); font-size: var(--font-18); font-weight: var(--weight-bold); color: var(--blue-dark); text-align: center; }
   </style>
         <div class="testimonial-grid count-2">
           <!-- STEF -->
@@ -675,7 +678,7 @@
       <div class="slide-inner">
         <div class="ancrage-layout">
           <div class="ancrage-text">
-            <h1 class="slide-title" style="text-align: left; margin-bottom: 28px;">Un fort ancrage <strong>en France</strong>...</h1>
+            <h1 class="slide-title ancrage-title">Un fort ancrage <strong>en France</strong>...</h1>
             <p>Nos &eacute;quipes locales accompagnent au quotidien nos clients dans leur d&eacute;veloppement et leurs transformations <strong>en s'appuyant sur un &eacute;cosyst&egrave;me de professionnels en r&eacute;gions</strong> :</p>
             <p>experts scientifiques, experts comptables, &eacute;tablissements bancaires, p&ocirc;les de comp&eacute;titivit&eacute;, f&eacute;d&eacute;rations professionnelles, avec un maillage de cabinets d'avocats et de m&eacute;decins ind&eacute;pendants.</p>
           </div>
